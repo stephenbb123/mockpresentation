@@ -6,5 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/CarUIPack/Demo.unity
-    guid: 36452d28292d3c4428af0a1dbe6c75f2
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9876300239da040b783e8aa3ad0acb22
+  - enabled: 1
+    path: Assets/Scenes/Challenge.unity
+    guid: fa5ff61de9bf0463ea270338ceed861f
+  - enabled: 1
+    path: Assets/Scenes/Coding.unity
+    guid: 34bef34cf8ac24f8fac282ed30d94049
+  - enabled: 1
+    path: Assets/Scenes/3D display.unity
+    guid: a0213edf78357471aa5d0f6a4df9b5e5
+  - enabled: 1
+    path: Assets/Scenes/Building.unity
+    guid: 5c7223691d821421596748253ce5a986
+  - enabled: 1
+    path: Assets/Scenes/Setting.unity
+    guid: 6984466516f614b08b6cb4da3bc5d2c9
+  - enabled: 1
+    path: Assets/Scenes/GamePaused.unity
+    guid: 98357629851144de1a68b43eba11a8aa
