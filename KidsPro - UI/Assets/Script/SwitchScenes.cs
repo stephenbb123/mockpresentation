@@ -10,6 +10,6 @@ public class SwitchScenes : MonoBehaviour {
     public void newScene(string name)
     {
         
-        SceneManager.LoadScene(name, LoadSceneMode.Additive);
+        SceneManager.LoadScene(name, LoadSceneMode.Single);
     }
 }
