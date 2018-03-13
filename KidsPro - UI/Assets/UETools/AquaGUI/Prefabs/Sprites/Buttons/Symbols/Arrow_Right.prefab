@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 22420718}
   - component: {fileID: 22220718}
   - component: {fileID: 11420718}
+  - component: {fileID: 225089882504268798}
   m_Layer: 0
   m_Name: Arrow_Right
   m_TagString: Untagged
@@ -79,3 +80,14 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 120718}
   m_IsPrefabParent: 1
+--- !u!225 &225089882504268798
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120718}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

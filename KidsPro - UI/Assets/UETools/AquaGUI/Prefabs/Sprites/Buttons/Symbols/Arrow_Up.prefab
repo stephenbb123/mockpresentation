@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 22415332}
   - component: {fileID: 22215332}
   - component: {fileID: 11415332}
+  - component: {fileID: 225735137417501896}
   m_Layer: 0
   m_Name: Arrow_Up
   m_TagString: Untagged
@@ -79,3 +80,14 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 115332}
   m_IsPrefabParent: 1
+--- !u!225 &225735137417501896
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115332}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
