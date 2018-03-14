@@ -1,4 +1,12 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Coding.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/Coding.unity
+=======
+- path: Assets/Scenes/MainMenu.unity
+>>>>>>> e42bf7494f7d803febe27c11a450b7c46ab560bc
+>>>>>>> 8171e5e299c695d4fc12b727f03ced36b262ce30
   isLoaded: 1
   isActive: 1
