@@ -7,6 +7,10 @@ public class WebCamText : MonoBehaviour {
 	public GameObject webCameraPlane;
 	// Use this for initialization
 	void Start () {
+
+		WebCamTexture webCameraTexture = new WebCamTexture ();
+		webCameraPlane.GetComponent<MeshRenderer> ().material.mainTexture = webCameraTexture;
+		webCameraTexture.Play ();
 		
 	}
 	
