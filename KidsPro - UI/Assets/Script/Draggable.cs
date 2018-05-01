@@ -35,9 +35,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 	}
 
 	public void OnDrag(PointerEventData eventData){
-		//Debug.Log("OnDrag");
-		this.transform.position = eventData.position;
-		Debug.Log(eventData.position);
+        //Debug.Log("OnDrag");
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = 120;
+        transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
+        Debug.Log(eventData.position);
 		if(placeholder.transform.parent != placeholderParent)
 			placeholder.transform.SetParent(placeholderParent);
 

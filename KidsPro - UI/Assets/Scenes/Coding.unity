@@ -1630,9 +1630,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1fb54ebc90d6e24d8e7ff45a5f8707d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentToReturnTo: {fileID: 0}
-  placeholderParent: {fileID: 0}
-  placeholder: {fileID: 0}
+  parentToReturnTo: {fileID: 1610992492}
+  placeholderParent: {fileID: 1817676314}
+  placeholder: {fileID: 848304546}
 --- !u!114 &848304549
 MonoBehaviour:
   m_ObjectHideFlags: 0
