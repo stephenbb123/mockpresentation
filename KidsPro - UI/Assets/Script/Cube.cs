@@ -17,16 +17,9 @@ public class Cube : MonoBehaviour
 
     void Update()
     {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = 120;
-        transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
-        if (Input.GetMouseButtonDown(0))
-        {
-            
-            newBlock = Instantiate(gameObject,transform.position,Quaternion.identity,parent);
-            newBlock.SetActive(true);
-            Debug.Log("Block Placed");
-        }
+        
+        
+
     }
 
     // Use this for initialization
@@ -35,6 +28,31 @@ public class Cube : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    private void OnMouseDown()
+    {
+        
+    }
+    private void OnMouseDrag()
+    {
+        if (!GetComponent<Rigidbody>())
+        {
+            gameObject.AddComponent<Rigidbody>();
+        }
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = 130;
+        transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
+    }
+    private void OnMouseUp()
+    {
+        //newBlock = Instantiate(gameObject, transform.position, Quaternion.identity, parent);
+        //newBlock.SetActive(true);
+        gameObject.GetComponent<Rigidbody>().useGravity = true;
+        Debug.Log("Block Placed");
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+       Destroy(GetComponent<Rigidbody>());
+    }
 
 
 
