@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 public class ItemDragHandler : MonoBehaviour, IEndDragHandler ,IDragHandler
 {
     public string name;
+    public Transform parent;
+    public GameObject newBlock=null;
     public GameObject goal;
     public BlockPanelItem Item { get; set; }
 
@@ -21,6 +23,7 @@ public class ItemDragHandler : MonoBehaviour, IEndDragHandler ,IDragHandler
     {
         
         gameObject.transform.localPosition = new Vector3 (-1,1,0);
+        //newBlock = Instantiate(goal, transform.position, Quaternion.identity,parent);
         goal.SetActive(true);
     }
     
