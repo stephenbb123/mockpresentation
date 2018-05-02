@@ -6,15 +6,15 @@ public class WayPoints : MonoBehaviour
 
     // put the points from unity interface
     public Vector3[] wayPointList;
-    public int currentWayPoint = 0;
+    public GameObject win;
+    int currentWayPoint = 0;
     Vector3 targetWayPoint;
-
     public float speed = 4f;
 
     // Use this for initialization
     void Start()
     {
-
+        win.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,18 +23,18 @@ public class WayPoints : MonoBehaviour
         // check if we have somewere to walk
         if (currentWayPoint < this.wayPointList.Length)
         {
-            if (targetWayPoint == null)
-                targetWayPoint = wayPointList[currentWayPoint];
+            targetWayPoint = wayPointList[currentWayPoint];
             walk();
 
         }
+        else win.SetActive(true);
     }
 
     void walk()
     {
         // rotate towards the target
-        transform.forward = Vector3.RotateTowards(transform.forward, targetWayPoint - transform.position, speed * Time.deltaTime, 0.0f);
-
+        transform.forward = Vector3.RotateTowards(transform.forward, (targetWayPoint - transform.position), speed * Time.deltaTime, 0.0f);
+        //Debug.Log(targetWayPoint +" , "+ transform.position);
         // move towards the target
         transform.position = Vector3.MoveTowards(transform.position, targetWayPoint, speed * Time.deltaTime);
 
@@ -43,5 +43,14 @@ public class WayPoints : MonoBehaviour
             currentWayPoint++;
             targetWayPoint = wayPointList[currentWayPoint];
         }
+
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(GetComponent<Rigidbody>());
+        speed = 0;
+        win.SetActive(true);
     }
 }
