@@ -16,7 +16,11 @@ public class ChangeTexture : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
+<<<<<<< HEAD
             //gameObject.guiTexture = newTexture;
+=======
+           // gameObject.GetComponent<GUITexture>() = newTexture;
+>>>>>>> c33bf63fcdcc60c7c55d85388cfb804773139cf1
         }
 	}
 }
