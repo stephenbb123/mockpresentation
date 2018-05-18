@@ -21,12 +21,13 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             newIcon = Instantiate(item, startPosition, Quaternion.identity, startParent);
         }
         GetComponent<CanvasGroup>().blocksRaycasts = false;
-        transform.parent = parent;
+        gameObject.transform.SetParent(parent);
+        
 	}
 
 	public void OnDrag (PointerEventData eventData){
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = 100;
+        mousePos.z = 450;
 		transform.position = Camera.main.ScreenToWorldPoint(mousePos);
 	}
 

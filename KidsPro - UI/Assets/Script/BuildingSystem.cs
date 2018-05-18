@@ -3,9 +3,9 @@ using System.Collections;
 
 public class BuildingSystem : MonoBehaviour
 {
-    private BlockSystem bSys;
+    private BlockSystem bSys = null ;
     private Vector3 buildPos;
-    private GameObject currentTempBlock;
+    private GameObject currentTempBlock = null;
     [SerializeField]
     private GameObject blockPrefab;
     // Use this for initialization

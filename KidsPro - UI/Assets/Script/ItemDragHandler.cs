@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class ItemDragHandler : MonoBehaviour, IEndDragHandler ,IDragHandler
 {
-    public string name;
+    public string objName;
     public Transform parent;
     public GameObject newBlock=null;
     public GameObject goal;
