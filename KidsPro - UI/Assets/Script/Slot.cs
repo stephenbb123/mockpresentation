@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour, IDropHandler {
+
 	public GameObject item{
 		get{
 			if(transform.childCount>0){
@@ -15,6 +16,8 @@ public class Slot : MonoBehaviour, IDropHandler {
  
 
     public void OnDrop (PointerEventData eventData){
+
+        
 		if(!item){
 			DragHandler.item.transform.SetParent(transform);
 		}
