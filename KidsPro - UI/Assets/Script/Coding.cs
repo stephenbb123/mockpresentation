@@ -24,7 +24,8 @@ public class Coding : MonoBehaviour
         car.transform.position = array2Da[0, 0];
         
         Debug.Log(car.transform.position);
-    
+        
+
     }
 
     // Update is called once per frame
@@ -43,6 +44,7 @@ public class Coding : MonoBehaviour
                 if (grandChild)
                 {
                     commands.Add(grandChild.name);
+                    System.Threading.Thread.Sleep(2000);
                     stat = grandChild.name;
                     Debug.Log(stat);
                     if (grandChild.name.Contains("(Clone)"))
@@ -53,36 +55,26 @@ public class Coding : MonoBehaviour
                     switch (stat)
                     {
                         case "up":
-                            row++;
                             MovementUp();
                             break;
 
                         case "down":
-                            transPos.z = car.transform.position.z - (77 * 4);
-                            //Movement();
+                            MovementDown();
                             break;
 
                         case "left":
-                            transPos.x = car.transform.position.x - (77 * 2);
-                            Rotat();
+                            MovementLeft();
+                            //Rotat();
                             break;
 
                         case "right":
-
-                            transPos.x = car.transform.position.x + (77 * 2);
-                            Rotat();
+                            MovementRight();
+                            //Rotat();
                             break;
                     }
                 }
             }
         }
-
-
-
-
-
-
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -94,8 +86,26 @@ public class Coding : MonoBehaviour
     }
     void MovementUp()
     {
+        row++;
         car.transform.position = array2Da[row, col];
-        this.StartCoroutine(Wait());
+    }
+
+    void MovementDown()
+    {
+        row--;
+        car.transform.position = array2Da[row, col];
+    }
+
+    void MovementLeft()
+    {
+        col--;
+        car.transform.position = array2Da[row, col];
+    }
+
+    void MovementRight()
+    {
+        col++;
+        car.transform.position = array2Da[row, col];
     }
 
     void Rotat()
@@ -105,8 +115,8 @@ public class Coding : MonoBehaviour
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(5);
-        Debug.Log("waiting");
+        yield return new WaitForSeconds(10);
+        Debug.Log("waiting 10");
     }
 
 }
