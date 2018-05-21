@@ -195,7 +195,7 @@ Prefab:
     - target: {fileID: 224437790762751600, guid: adfa07ee8bbff7f4e932077bfe4ba768,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: -54.1
+      value: -144
       objectReference: {fileID: 0}
     - target: {fileID: 224437790762751600, guid: adfa07ee8bbff7f4e932077bfe4ba768,
         type: 2}
@@ -225,12 +225,12 @@ Prefab:
     - target: {fileID: 224437790762751600, guid: adfa07ee8bbff7f4e932077bfe4ba768,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -710.7
+      value: -418
       objectReference: {fileID: 0}
     - target: {fileID: 224437790762751600, guid: adfa07ee8bbff7f4e932077bfe4ba768,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -131.3
+      value: -131
       objectReference: {fileID: 0}
     - target: {fileID: 224437790762751600, guid: adfa07ee8bbff7f4e932077bfe4ba768,
         type: 2}
@@ -911,7 +911,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1109966193}
-        m_MethodName: Start
+        m_MethodName: Run
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 116721308}

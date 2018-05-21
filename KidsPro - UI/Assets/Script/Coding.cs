@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,19 +10,20 @@ public class Coding : MonoBehaviour
     Vector3 transPos;
     float speed = 60;
     string direction;
-    Vector3[,] array2Da = new Vector3[5, 4] { {new Vector3 (689.0f,387.7f,-9.6f), new Vector3(),new Vector3 (),new Vector3 () } ,
+    public Vector3[,] array2Da = new Vector3[5, 4] { {new Vector3 (689.0f,387.7f,-9.6f), new Vector3(),new Vector3 (),new Vector3 () } ,
                                             { new Vector3(689.0f,387.7f,63.1f), new Vector3(764.9f,387.7f,63.1f), new Vector3(854.1f,387.7f,63.1f),new Vector3 (926.0f,387.7f,63.1f) },
                                             { new Vector3(689.0f,387.7f,140.2f), new Vector3(), new Vector3(),new Vector3 (854.1f,387.7f,140.2f) },
                                             { new Vector3(689.0f,387.7f,216.1f), new Vector3(764.9f,387.7f,216.1f),new Vector3 (854.1f, 387.7f, 216.1f),new Vector3 (926.0f, 387.7f, 216.1f) } ,
                                             { new Vector3(689.0f,387.7f,388.6f), new Vector3(), new Vector3(),new Vector3 () }};
-
+    int row = 0;
+    int col = 0;
 
     void Start()
     {
         commands.Clear();
-        transPos = car.transform.position;
-      
-        Debug.Log(transPos);
+        car.transform.position = array2Da[0, 0];
+        
+        Debug.Log(car.transform.position);
     
     }
 
@@ -33,12 +33,9 @@ public class Coding : MonoBehaviour
        
     }
 
-        
-     
-
-
-    public void Start(GameObject gameObj)
+    public void Run(GameObject gameObj)
     {
+        string stat;
         foreach (Transform child in gameObject.transform)
         {
             foreach (Transform grandChild in child)
@@ -46,28 +43,17 @@ public class Coding : MonoBehaviour
                 if (grandChild)
                 {
                     commands.Add(grandChild.name);
-                }
-            }
-        }
-
-        if (commands != null)
-        {
-            foreach (string command in commands)
-            {
-                string stat = command;
-
-                {
-                    if (command.Contains("(Clone)"))
-                    {
-                        int index = command.IndexOf("(");
-                        stat = command.Substring(0, index);
-                    }
+                    stat = grandChild.name;
                     Debug.Log(stat);
-
+                    if (grandChild.name.Contains("(Clone)"))
+                    {
+                        int index = grandChild.name.IndexOf("(");
+                        stat = grandChild.name.Substring(0, index);
+                    }
                     switch (stat)
                     {
                         case "up":
-                            transPos.z = car.transform.position.z + 77;
+                            row++;
                             MovementUp();
                             break;
 
@@ -89,8 +75,8 @@ public class Coding : MonoBehaviour
                     }
                 }
             }
-
         }
+
 
 
 
@@ -108,10 +94,8 @@ public class Coding : MonoBehaviour
     }
     void MovementUp()
     {
-        do { 
-            car.transform.position = Vector3.MoveTowards(car.transform.position, transPos, speed * Time.deltaTime);
-        }
-        while (car.transform.position == transPos);
+        car.transform.position = array2Da[row, col];
+        this.StartCoroutine(Wait());
     }
 
     void Rotat()
@@ -119,76 +103,12 @@ public class Coding : MonoBehaviour
         car.transform.position = Vector3.RotateTowards(car.transform.position, (transPos - car.transform.position), speed * Time.deltaTime, 0.0f);
     }
 
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(5);
+        Debug.Log("waiting");
+    }
+
 }
 
 /**/
-=======
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using Vuforia;
-
-public class Coding : MonoBehaviour
-{
-    List<string> commands = new List<string>();
-    Vector3 transPos;
-    public float speed = 4f;
-
-    void Start()
-    {
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-
-    }
-
-    public void start(GameObject gameObj)
-    {
-        Debug.Log("GameObject to be moved :"+gameObj);
-        commands.Clear();
-        transPos = gameObj.transform.position;
-        Debug.Log("TransPos:"+transPos);
-        foreach (Transform child in gameObject.transform)
-        {
-            foreach (Transform grandChild in child)
-            {
-                if (grandChild)
-                {
-                   commands.Add(grandChild.name);
-                }
-            }
-        }
-
-        foreach (string command in commands)
-        {
-            string stat = command;
-            if (command.Contains("(Clone)"))
-            { 
-            int index = command.IndexOf("(");
-            stat = command.Substring(0, index);
-                Debug.Log(stat);
-            }   
-
-            switch (stat)
-            {
-                case "up" :
-                    transPos.x = gameObj.transform.position.x + 100;
-                    gameObj.transform.position = Vector3.MoveTowards(gameObj.transform.position, transPos , speed * Time.deltaTime);
-                    Debug.Log("TransPos:" +transPos + " , position:" + gameObj.transform.position);
-                    break;
-
-                case "down":
-                    transPos.x = gameObj.transform.position.x - 100;
-                    gameObj.transform.position = Vector3.MoveTowards(gameObj.transform.position, transPos, speed * Time.deltaTime);
-                    break;
-
-            }
-        }
-    }
-
-}
->>>>>>> f1afac9eb52c3f7bdc6922532c9be2b599b7e3f8
