@@ -1,0 +1,29 @@
+Thanks for purchasing Building Block Editor.  We hope you find it useful.
+
+Getting Started - 
+
+Documentation is located in the Docs folder, this contains full details on how to setup the demo project.
+
+Video Tutorials are available on our YouTube channel - https://youtu.be/7CWOGMvlDnA?list=PLhOBdAuDweKO8DQ_qT_Ok0CnhKFg1WYMX 
+
+Getting in touch - 
+
+email: contact@bumpkinbrothers.com
+twitter: @bumpkinRich or @bumpkinAndy
+facebook: https://www.facebook.com/bumpkinbrothers
+unity forum thread: http://forum.unity3d.com/threads/introducing-building-block-editor.320956/
+
+Current Version 1.2
+
+1.2
+Added functionality to connectors to only connect to others with a matching tag.
+Removed depricated scene loaded and updated to use scene manager.
+
+1.1
+Removed some unused variables.
+Changed menu to place Bumpkin Labs items in the Tools menu on recommendation from Unity (keep the menu clean)
+
+Updates.
+1.0
+Initial Release.
+

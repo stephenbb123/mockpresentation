@@ -59,3 +59,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 6c02d6d8ee8918144843f148db59e58e
+  - enabled: 1
+    path: Assets/BuildingBlockDemo/Scenes/BBExMenu.unity
+    guid: 02941b5505a5ff54c89c6f68e06b8419
