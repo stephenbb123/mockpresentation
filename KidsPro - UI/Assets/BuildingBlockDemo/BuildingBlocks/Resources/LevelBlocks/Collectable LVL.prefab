@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4996c290debec4abe095deff5f7673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pSystem: {fileID: 0}
+  particleSystem: {fileID: 19855450}
   collectableObject: {fileID: 141352}
 --- !u!198 &19855450
 ParticleSystem:
