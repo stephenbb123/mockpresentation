@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
 		Application.LoadLevel(Application.loadedLevel);
 	}
 	
-	/*//User pressed the menu button
+	//User pressed the menu button
 	public void MenuClicked()
 	{
 		if (BumpkinLabs.IGE.PersistentSceneData.Instance.TestMode)
@@ -79,8 +79,7 @@ public class GameManager : MonoBehaviour
 			Application.LoadLevel("BBExMenu");
 		}
 	}
-	*/
-
+	
 	//Add a collectable to the collection.
 	public void AddCollectable()
 	{
