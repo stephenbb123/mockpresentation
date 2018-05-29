@@ -101,7 +101,8 @@ public class Coding : MonoBehaviour
                 {
                     for (int y = start+1; y < end; y++)
                     {
-                        commands.Add(commands[y]);
+                        commands.Insert(commands.IndexOf("}")+1, commands[y]);
+                        //commands.Add(commands[y]);
                         Debug.Log("Added");
                     }
                 }
@@ -131,10 +132,12 @@ public class Coding : MonoBehaviour
                     col++;
                     car.SetWayPoints(map[row, col]);
                     break;
+
                 case "if":
                     break;
                 case "loop":
-                    for (int u = 0; u < 3; u++)
+
+                    for (int u = 0; u < 2; u++)
                     {
                         row++;
                         car.SetWayPoints(map[row, col]);
@@ -149,7 +152,7 @@ public class Coding : MonoBehaviour
                         row--;
                         car.SetWayPoints(map[row, col]);
                     }
-                    for (int u = 0; u < 2; u++)
+                    for (int u = 0; u < 3; u++)
                     {
                         col--;
                         car.SetWayPoints(map[row, col]);
