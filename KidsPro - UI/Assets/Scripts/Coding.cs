@@ -108,32 +108,52 @@ public class Coding : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < commands.Count; i++) { 
+        for (int i = 0; i < commands.Count; i++) {
 
             switch (commands[i])    //if there is no while in the user input
-                {
-                    case "up":
+            {
+                case "up":
+                    row++;
+                    car.SetWayPoints(map[row, col]);
+                    break;
+
+                case "down":
+                    row--;
+                    car.SetWayPoints(map[row, col]);
+                    break;
+
+                case "left":
+                    col--;
+                    car.SetWayPoints(map[row, col]);
+                    break;
+
+                case "right":
+                    col++;
+                    car.SetWayPoints(map[row, col]);
+                    break;
+                case "if":
+                    break;
+                case "loop":
+                    for (int u = 0; u < 3; u++)
+                    {
                         row++;
                         car.SetWayPoints(map[row, col]);
-                        break;
-
-                    case "down":
+                    }
+                    for (int u = 0; u < 3; u++)
+                    { 
+                    col++;
+                    car.SetWayPoints(map[row, col]);
+                    }
+                    for (int u = 0; u < 2; u++)
+                    {
                         row--;
                         car.SetWayPoints(map[row, col]);
-                        break;
-
-                    case "left":
+                    }
+                    for (int u = 0; u < 2; u++)
+                    {
                         col--;
                         car.SetWayPoints(map[row, col]);
-                        break;
-
-                    case "right":
-                        col++;
-                        car.SetWayPoints(map[row, col]);
-                        break;
-                    case "if":
-                        break;
-                    case "loop":
+                    }
                         break;
 
                     case "default":

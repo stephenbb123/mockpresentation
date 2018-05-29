@@ -16,7 +16,7 @@ public class CarController : MonoBehaviour
     private float startTime;
     private float journeyLength;
     Vector3[,] mapCoord;
-    float speed = 0.6f;
+    float speed = 1f;
     Coding abc;
     Crashed crash;
 
@@ -59,13 +59,13 @@ public class CarController : MonoBehaviour
                 Debug.Log("Now at: " + transform.localPosition);
                 Debug.Log("[Current]: " + wayPointList[current]);
                 startTime = Time.time;
-
+                
             }
             else
             {
                 current++;
 
-                if (wayPointList[wayPointList.Count-1]!=mapCoord[5,4])
+                /*if (wayPointList[wayPointList.Count-1]!=mapCoord[5,4])
                 {
                    crash.CallCrash();
                 }
@@ -73,7 +73,7 @@ public class CarController : MonoBehaviour
                 {
                    crash.CallCrash();
                 }
-
+                */
             }
 
 
