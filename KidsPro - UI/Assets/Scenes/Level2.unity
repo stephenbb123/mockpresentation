@@ -552,6 +552,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wayPointList: []
   levelAns: []
+--- !u!114 &116721312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 116721308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a1f38b446ec5348b9db29e31b903f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &143455199 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000013039318944, guid: f0cf8146888c5ba4ebd406d6a76baeb7,

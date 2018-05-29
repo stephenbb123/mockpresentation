@@ -7,6 +7,7 @@ namespace BumpkinLabs.IGE
 	[AddComponentMenu("IGE/Scene/Level Editor Manager")]
 	public class LevelEditorManager : MonoBehaviour 
 	{
+        
 		//If the scene starts with blocks in place then put them here.
 		public BuildingBlock[] initialBlocks;
 
@@ -115,9 +116,10 @@ namespace BumpkinLabs.IGE
 			}
 
 			GameObject go = buildingBlock as GameObject;
-			
+            
 			//Cast the arg as a building block and create a new instance of it.
 			BuildingBlock bb = go.GetComponent<BuildingBlock>();
+            
 
 			//Disable the current mode.
 			if (currentMode != null)

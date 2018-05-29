@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 89821420}
   - component: {fileID: 89821419}
   - component: {fileID: 89821418}
+  - component: {fileID: 89821422}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -275,6 +276,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &89821422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 89821416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cde1b0fd52b04bbe9273661cc5cd032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &115769430
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +503,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 89821420}
+      - m_Target: {fileID: 89821422}
         m_MethodName: newScene
         m_Mode: 5
         m_Arguments:
@@ -614,7 +626,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 89821420}
+      - m_Target: {fileID: 89821422}
         m_MethodName: newScene
         m_Mode: 5
         m_Arguments:
@@ -846,7 +858,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 89821420}
+      - m_Target: {fileID: 89821422}
         m_MethodName: newScene
         m_Mode: 5
         m_Arguments:

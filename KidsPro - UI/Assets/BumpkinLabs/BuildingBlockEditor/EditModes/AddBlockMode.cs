@@ -8,12 +8,13 @@ namespace BumpkinLabs.IGE
 	[RequireComponent(typeof(BlockSelector))]
 	public class AddBlockMode : EditMode 
 	{
-		public enum AddBlockModes
+        
+        public enum AddBlockModes
 		{
 			CreatingBlocks,
 			MovingBlock
 		}
-
+        public Transform carParent;
 		//The camera doing raycasting.
 		public Camera raycastingCamera;
 
@@ -122,7 +123,7 @@ namespace BumpkinLabs.IGE
 			BuildingBlock newObject = null;
 
 			newObject = Instantiate(blockTemplate, Vector3.zero, Quaternion.identity) as BuildingBlock;
-
+            newObject.transform.parent = carParent;
 		
 			//Put the current block in placement mode.
 			currentBlock = newObject.GetComponent<BuildingBlock>();
@@ -182,7 +183,7 @@ namespace BumpkinLabs.IGE
 			placementHelperCurrent.transform.Rotate(0,0,rotation, Space.Self);
 
 			//Unparent the current block.
-			currentBlock.transform.parent = null;
+			currentBlock.transform.parent = carParent;
 		}
 
 		/// <summary>
