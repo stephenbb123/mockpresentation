@@ -93,23 +93,24 @@ public class Coding : MonoBehaviour
         {
             if (commands[i] == "while")   //do following loop if input contains while.
             {
-                counter = 0;
+
                 start = commands.IndexOf("{");
                 end = commands.IndexOf("}");
-                while (counter < num)
+                Debug.Log("Start index:" + start + ", end " + end);
+                for (counter = 0; counter < num; counter++)
                 {
-                    for (int y = start; y < end; y++)
+                    for (int y = start+1; y < end; y++)
                     {
                         commands.Add(commands[y]);
+                        Debug.Log("Added");
                     }
                 }
+            }
+        }
 
+        for (int i = 0; i < commands.Count; i++) { 
 
-                break;
-            }                     // finish handling while input loop.
-            else
-            {
-                switch (commands[i])    //if there is no while in the user input
+            switch (commands[i])    //if there is no while in the user input
                 {
                     case "up":
                         row++;
@@ -138,8 +139,7 @@ public class Coding : MonoBehaviour
                     case "default":
                         break;
                 }
-            }
-        }                             //finish looping all input.
+            }                               //finish looping all input.
         car.enabled = true;
         //car.Movement();
     }
@@ -178,6 +178,7 @@ public class Coding : MonoBehaviour
     public void Text_Changed(string changeText)
     {
          num = int.Parse(changeText);
+        Debug.Log(num);
 
     }
 
