@@ -124,23 +124,32 @@ public class Coding : MonoBehaviour
                     for (int a = ifIndex; a < end; a++)
                     {
                         if (commands.Contains("left"))
-                        {
-                            randText.SetString("Wrong Way. Please reset and try again.");
+                        {   for (int j = 0; j < 50; j++)
+                            {
+                                randText.SetString("Wrong Way. Please reset and try again.");
+                            }
                             break;
                         }
                     }
-                    break;
+                    
+                
+                break;
                 } else if (commands[ifIndex + 1] == "even")
                 {
                     for (int a = ifIndex; a < end; a++)
                     {
                         if (commands.Contains("up"))
                         {
-                            randText.SetString("Wrong Way. Please reset and try again.");
+                            for (int j = 0; j < 50; j++)
+                            {
+                                randText.SetString("Wrong Way. Please reset and try again.");
+                            }
                             break;
                         }
                     }
-                    break;
+                
+            
+            break;
                 }
                 
                 
@@ -149,6 +158,7 @@ public class Coding : MonoBehaviour
                     commands.Insert(end + 1, commands[y]);
                     //commands.Add(commands[y]);
                     Debug.Log("Added");
+                   
                 }
             }
 
@@ -240,11 +250,12 @@ public class Coding : MonoBehaviour
     }
 
     public void Clear(){
-        randText = FindObjectOfType<SetText>();
+       
        
             row = 0;
             col = 0;
-            randText.SetString("Objective:Odd Number-> Go up. Even number -> Go left.\nNumber: " + Random.Range(1, 10));
+
+        car.SetWayPoints(map[row, col]);
         commands.Clear();
         foreach (Transform child in gameObject.transform)
         {
@@ -257,6 +268,9 @@ public class Coding : MonoBehaviour
                 }
             }
         }
+     
+        randText = FindObjectOfType<SetText>();
+        randText.SetString("Objective:Odd Number-> Go up. Even number -> Go left.\nNumber: " + Random.Range(1, 10));
     }
 
     public void Text_Changed(string changeText)

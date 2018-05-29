@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class SetText : MonoBehaviour {
     public Text randText;
+
     // Use this for initialization
     void Start () {
         randText.text = "Objective:Odd Number-> Go up. Even number -> Go left.\nNumber: " + Random.Range(1, 10);
