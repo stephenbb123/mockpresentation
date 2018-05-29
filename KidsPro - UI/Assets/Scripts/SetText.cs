@@ -22,4 +22,8 @@ public class SetText : MonoBehaviour {
     {
         return randText.text;
     }
+    public void SetString(string txt)
+    {
+        randText.text = txt;
+    }
 }

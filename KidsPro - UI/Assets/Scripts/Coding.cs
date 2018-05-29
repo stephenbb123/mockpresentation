@@ -89,6 +89,7 @@ public class Coding : MonoBehaviour
         
         car = FindObjectOfType<CarController>();
         flag = FindObjectOfType<Flag>();
+        randText = FindObjectOfType<SetText>();
         int start = 0;
         int end = 0;
         for (int i = 0; i < commands.Count; i++) //loop all input.
@@ -112,12 +113,36 @@ public class Coding : MonoBehaviour
 
             if(commands[i] == "if")
             {
-
+                
                 start = commands.IndexOf("{");
                 end = commands.IndexOf("}");
                 int ifIndex = commands.IndexOf("if");
-                
                 Debug.Log("Start index:" + start + ", end " + end);
+
+                if (commands[ifIndex + 1]=="odd")
+                {
+                    for (int a = ifIndex; a < end; a++)
+                    {
+                        if (commands.Contains("left"))
+                        {
+                            randText.SetString("Wrong Way. Please reset and try again.");
+                            break;
+                        }
+                    }
+                    break;
+                } else if (commands[ifIndex + 1] == "even")
+                {
+                    for (int a = ifIndex; a < end; a++)
+                    {
+                        if (commands.Contains("up"))
+                        {
+                            randText.SetString("Wrong Way. Please reset and try again.");
+                            break;
+                        }
+                    }
+                    break;
+                }
+                
                 
                 for (int y = start + 1; y < end; y++)
                 {
@@ -215,11 +240,11 @@ public class Coding : MonoBehaviour
     }
 
     public void Clear(){
-        
+        randText = FindObjectOfType<SetText>();
        
             row = 0;
             col = 0;
-        
+            randText.SetString("Objective:Odd Number-> Go up. Even number -> Go left.\nNumber: " + Random.Range(1, 10));
         commands.Clear();
         foreach (Transform child in gameObject.transform)
         {
