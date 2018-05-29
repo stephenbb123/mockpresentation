@@ -1342,7 +1342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4dc9485ec174c44bb7aa7b9d65f7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showMenu: 1
+  showMenu: 0
   usePersistentDataPath: 1
   savePath: 
 --- !u!1 &467549215

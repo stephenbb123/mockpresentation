@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine.UI;
 
 public class Coding : MonoBehaviour
 {
@@ -9,11 +9,7 @@ public class Coding : MonoBehaviour
     
     List<string> commands = new List<string>();
     float speed = 20f;
-    public Vector3[,] map = { {new Vector3 (-420f, -137f, -165f), new Vector3(),new Vector3 (),new Vector3 () } ,
-                                            { new Vector3(-514f, -137f, -165f), new Vector3(-514f, -137f, -63f), new Vector3(-514f, -137f, 64f),new Vector3 (-514f, -137f, 148f) },
-                                            { new Vector3(-608f, -137f, -165f), new Vector3(), new Vector3(),new Vector3 (-608f, -137f, 148f) },
-                                            { new Vector3(-702f, -137f, -165f), new Vector3(-702f, -137f, -63f),new Vector3 (-702f, -137f, 64f),new Vector3 (-702f, -137f, 148f) } ,
-                                            { new Vector3(-796f, -137f, -165f), new Vector3(), new Vector3(),new Vector3 () }};
+    SceneObject scene;
     CarController car;
     int counter;
     List <Vector3> ans = new List<Vector3>();
@@ -22,13 +18,19 @@ public class Coding : MonoBehaviour
     int num;
     Crashed crash;
     Flag flag;
+    SetText randText;
+    public Vector3[,] map = { {new Vector3 (-420f, -137f, -165f), new Vector3(),new Vector3 (-420f,-137f,64f),new Vector3 () } ,
+                                            { new Vector3(-514f, -137f, -165f), new Vector3(-514f, -137f, -63f), new Vector3(-514f, -137f, 64f),new Vector3 (-514f, -137f, 148f) },
+                                            { new Vector3(-608f, -137f, -165f), new Vector3(), new Vector3(),new Vector3 (-608f, -137f, 148f) },
+                                            { new Vector3(-702f, -137f, -165f), new Vector3(-702f, -137f, -63f),new Vector3 (-702f, -137f, 64f),new Vector3 (-702f, -137f, 148f) } ,
+                                            { new Vector3(-796f, -137f, -165f), new Vector3(), new Vector3(-796f,-137f,64f),new Vector3 () }};
 
-   
 
     void Start()
     {   car = FindObjectOfType<CarController>();
-        row =0;
-        col = 0;
+       
+       
+        
         car.enabled = false;
         for (int i = 0; i < 5;i++){
 
@@ -101,12 +103,44 @@ public class Coding : MonoBehaviour
                 {
                     for (int y = start+1; y < end; y++)
                     {
-                        commands.Insert(commands.IndexOf("}")+1, commands[y]);
+                        commands.Insert(end+1, commands[y]);
                         //commands.Add(commands[y]);
                         Debug.Log("Added");
                     }
                 }
             }
+
+            if(commands[i] == "if")
+            {
+
+                start = commands.IndexOf("{");
+                end = commands.IndexOf("}");
+                int ifIndex = commands.IndexOf("if");
+                
+                Debug.Log("Start index:" + start + ", end " + end);
+                
+                for (int y = start + 1; y < end; y++)
+                {
+                    commands.Insert(end + 1, commands[y]);
+                    //commands.Add(commands[y]);
+                    Debug.Log("Added");
+                }
+            }
+
+            if (commands[i] == "else")
+            {
+                start = commands.IndexOf("{");
+                end = commands.IndexOf("}");
+                Debug.Log("Start index:" + start + ", end " + end);
+
+                for (int y = start + 1; y < end; y++)
+                {
+                    commands.Insert(end + 1, commands[y]);
+                    //commands.Add(commands[y]);
+                    Debug.Log("Added");
+                }
+            }
+
         }
 
         for (int i = 0; i < commands.Count; i++) {
@@ -133,19 +167,18 @@ public class Coding : MonoBehaviour
                     car.SetWayPoints(map[row, col]);
                     break;
 
-                case "if":
-                    break;
+          
                 case "loop":
 
-                    for (int u = 0; u < 2; u++)
-                    {
+                    for (int u = 0; u < 3; u++)
+                        {
                         row++;
                         car.SetWayPoints(map[row, col]);
                     }
                     for (int u = 0; u < 3; u++)
-                    { 
-                    col++;
-                    car.SetWayPoints(map[row, col]);
+                    {
+                        col++;
+                        car.SetWayPoints(map[row, col]);
                     }
                     for (int u = 0; u < 2; u++)
                     {
@@ -157,12 +190,12 @@ public class Coding : MonoBehaviour
                         col--;
                         car.SetWayPoints(map[row, col]);
                     }
-                        break;
+                    break;
 
                     case "default":
                         break;
-                }
-            }                               //finish looping all input.
+            }
+        }                               //finish looping all input.
         car.enabled = true;
         //car.Movement();
     }
@@ -182,8 +215,11 @@ public class Coding : MonoBehaviour
     }
 
     public void Clear(){
-        row = 0;
-        col = 0;
+        
+       
+            row = 0;
+            col = 0;
+        
         commands.Clear();
         foreach (Transform child in gameObject.transform)
         {
