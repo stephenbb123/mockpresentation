@@ -8,7 +8,7 @@ public class SetText : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        randText.text = "Objective:Odd Number-> Go up. Even number -> Go left.\nNumber: " + Random.Range(1, 10);
+        randText.text = "Objective:Odd Number-> Go up. Even number -> Go right.\nNumber: " + Random.Range(1, 10);
 	}
 	
 	// Update is called once per frame

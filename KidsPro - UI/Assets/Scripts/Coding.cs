@@ -123,11 +123,10 @@ public class Coding : MonoBehaviour
                 {
                     for (int a = ifIndex; a < end; a++)
                     {
-                        if (commands.Contains("left"))
-                        {   for (int j = 0; j < 50; j++)
-                            {
+                        if (commands.Contains("right"))
+                        {   
                                 randText.SetString("Wrong Way. Please reset and try again.");
-                            }
+                            
                             break;
                         }
                     }
@@ -140,10 +139,9 @@ public class Coding : MonoBehaviour
                     {
                         if (commands.Contains("up"))
                         {
-                            for (int j = 0; j < 50; j++)
-                            {
+                            
                                 randText.SetString("Wrong Way. Please reset and try again.");
-                            }
+                            
                             break;
                         }
                     }
@@ -270,7 +268,7 @@ public class Coding : MonoBehaviour
         }
      
         randText = FindObjectOfType<SetText>();
-        randText.SetString("Objective:Odd Number-> Go up. Even number -> Go left.\nNumber: " + Random.Range(1, 10));
+        randText.SetString("Objective:Odd Number-> Go up. Even number -> Go right.\nNumber: " + Random.Range(1, 10));
     }
 
     public void Text_Changed(string changeText)
