@@ -86,10 +86,11 @@ public class Coding : MonoBehaviour
 
     public void SetWayPoint()
     {
-        
+
         car = FindObjectOfType<CarController>();
         flag = FindObjectOfType<Flag>();
         randText = FindObjectOfType<SetText>();
+        int number;
         int start = 0;
         int end = 0;
         for (int i = 0; i < commands.Count; i++) //loop all input.
@@ -100,138 +101,182 @@ public class Coding : MonoBehaviour
                 start = commands.IndexOf("{");
                 end = commands.IndexOf("}");
                 Debug.Log("Start index:" + start + ", end " + end);
-                for (counter = 0; counter < num; counter++)
+                for (counter = 1; counter < num; counter++)
                 {
-                    for (int y = start+1; y < end; y++)
+                    for (int y = start + 1; y < end; y++)
                     {
-                        commands.Insert(end+1, commands[y]);
-                        //commands.Add(commands[y]);
+                        commands.Insert(end + 1, commands[y]);
+
                         Debug.Log("Added");
                     }
                 }
             }
 
-            if(commands[i] == "if")
+            if (commands[i] == "if")
             {
-                
+
+                number = randText.GetNum();
                 start = commands.IndexOf("{");
                 end = commands.IndexOf("}");
                 int ifIndex = commands.IndexOf("if");
                 Debug.Log("Start index:" + start + ", end " + end);
 
-                if (commands[ifIndex + 1]=="odd")
+                if (number % 2 == 1)
                 {
-                    for (int a = ifIndex; a < end; a++)
+                    if (commands.Contains("odd"))
                     {
-                        if (commands.Contains("right"))
-                        {   
-                                randText.SetString("Wrong Way. Please reset and try again.");
-                            
-                            break;
+                        ifIndex = commands.IndexOf("odd");
+                        start = ifIndex + 1;
+                        end = commands.IndexOf("}");
+                        if (start > end)
+                        { end = commands.LastIndexOf("}"); }
+                        if(commands[start+1]=="up"){
+                            for (int a = start + 1; a < end; a++){
+                                
+                            commands.Insert(end + 1, commands[a]);
+
+                                }
+                        }
+
+                            else
+                            {
+                                randText.SetString("Wrong Way.Please reset and try again.");
+                                break;
+                            }
                         }
                     }
+
+                    else if (commands.Contains("even"))
+                    {
+                        
+                        start = commands.IndexOf("else");
+                        end = commands.LastIndexOf("}");
+                        if (commands[start + 1] == "odd")
+                        {
+                            for (int b = start + 3; b < end; b++)
+                            {
+                                if (commands[b].Equals("up"))
+                                {
+                                    commands.Insert(end + 1, commands[b]);
+
+                                }
+                                else
+                                {
+                                    randText.SetString("Wrong Way.Please reset and try again.");
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                             
+                if(number % 2==0){
+                    if (commands.Contains("even"))
+                    {
+                        ifIndex = commands.IndexOf("even");
+                        start = ifIndex + 1;
+                        end = commands.IndexOf("}");
+                        if (start > end)
+                        { end = commands.LastIndexOf("}"); }
+                        if(commands[start+1] =="right"){
+                        for (int a = start + 1; a < end; a++)
+                        { 
+                                commands.Insert(end + 1, commands[a]);
+
+                                }    
+                        }
+                            else
+                            {
+                                randText.SetString("Wrong Way.Please reset and try again.");
+                                break;
+                            }
+                        }
+                    if (commands.Contains("odd"))
+                    {
+                        ifIndex = commands.IndexOf("else");
+                        start = ifIndex + 2;
+                        end = commands.LastIndexOf("}");
+                        if (commands[ifIndex + 1] == "even")
+                        {
+                            if (commands[start + 1] == "right")
+                            {
+                                for (int b = start + 1; b < end; b++)
+                                {
+                                    if (commands[b].Equals("up"))
+                                    {
+                                        commands.Insert(end + 1, commands[b]);
+
+                                    }
+
+                                }
+                            }
+                            else
+                            {
+                                randText.SetString("Wrong Way.Please reset and try again.");
+                                break;
+                            }
+
+
+                        }
+                    }
+                    }
+                }
                     
-                
-                break;
-                } else if (commands[ifIndex + 1] == "even")
+
+
+
+                switch (commands[i])    //if there is no while in the user input
                 {
-                    for (int a = ifIndex; a < end; a++)
-                    {
-                        if (commands.Contains("up"))
-                        {
-                            
-                                randText.SetString("Wrong Way. Please reset and try again.");
-                            
-                            break;
-                        }
-                    }
-                
-            
-            break;
-                }
-                
-                
-                for (int y = start + 1; y < end; y++)
-                {
-                    commands.Insert(end + 1, commands[y]);
-                    //commands.Add(commands[y]);
-                    Debug.Log("Added");
-                   
-                }
-            }
-
-            if (commands[i] == "else")
-            {
-                start = commands.IndexOf("{");
-                end = commands.IndexOf("}");
-                Debug.Log("Start index:" + start + ", end " + end);
-
-                for (int y = start + 1; y < end; y++)
-                {
-                    commands.Insert(end + 1, commands[y]);
-                    //commands.Add(commands[y]);
-                    Debug.Log("Added");
-                }
-            }
-
-        }
-
-        for (int i = 0; i < commands.Count; i++) {
-
-            switch (commands[i])    //if there is no while in the user input
-            {
-                case "up":
-                    row++;
-                    car.SetWayPoints(map[row, col]);
-                    break;
-
-                case "down":
-                    row--;
-                    car.SetWayPoints(map[row, col]);
-                    break;
-
-                case "left":
-                    col--;
-                    car.SetWayPoints(map[row, col]);
-                    break;
-
-                case "right":
-                    col++;
-                    car.SetWayPoints(map[row, col]);
-                    break;
-
-          
-                case "loop":
-
-                    for (int u = 0; u < 3; u++)
-                        {
+                    case "up":
                         row++;
                         car.SetWayPoints(map[row, col]);
-                    }
-                    for (int u = 0; u < 3; u++)
-                    {
-                        col++;
-                        car.SetWayPoints(map[row, col]);
-                    }
-                    for (int u = 0; u < 2; u++)
-                    {
+                        break;
+
+                    case "down":
                         row--;
                         car.SetWayPoints(map[row, col]);
-                    }
-                    for (int u = 0; u < 3; u++)
-                    {
+                        break;
+
+                    case "left":
                         col--;
                         car.SetWayPoints(map[row, col]);
-                    }
+                        break;
+
+                    case "right":
+                        col++;
+                        car.SetWayPoints(map[row, col]);
                     break;
+                    case "loop":
+                    
+                        for (int u = 0; u < 2; u++)
+                        {
+                            row++;
+                            car.SetWayPoints(map[row, col]);
+                        }
+                        for (int u = 0; u < 3; u++)
+                        {
+                            col++;
+                            car.SetWayPoints(map[row, col]);
+                        }
+                        for (int u = 0; u < 2; u++)
+                        {
+                            row--;
+                            car.SetWayPoints(map[row, col]);
+                        }
+                        for (int u = 0; u < 3; u++)
+                        {
+                            col--;
+                            car.SetWayPoints(map[row, col]);
+                        }
+                        break;
 
                     case "default":
                         break;
+                }
             }
-        }                               //finish looping all input.
-        car.enabled = true;
-        //car.Movement();
-    }
+                                     //finish looping all input.
+            car.enabled = true;
+            //car.Movement();
+        }
 
 
 
@@ -274,7 +319,7 @@ public class Coding : MonoBehaviour
     public void Text_Changed(string changeText)
     {
          num = int.Parse(changeText);
-        Debug.Log(num);
+
 
     }
 

@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class SetText : MonoBehaviour {
     public Text randText;
-
+    public string message;
+    public int number;
     // Use this for initialization
     void Start () {
-        randText.text = "Objective:Odd Number-> Go up. Even number -> Go right.\nNumber: " + Random.Range(1, 10);
+        number = Random.Range(1, 10);
+        randText.text = "Objective:Odd Number-> Go up. Even number -> Go right.\nNumber: " + number;
 	}
 	
 	// Update is called once per frame
@@ -17,14 +19,18 @@ public class SetText : MonoBehaviour {
 	}
     public void ReGenerate()
     {
-        randText.text = "" + Random.Range(1, 10);
+        randText.text = "Objective:Odd Number-> Go up. Even number -> Go right.\nNumber: " + Random.Range(1,10);
     }
-    public string GetText()
+    public string GetString()
     {
-        return randText.text;
+        message = randText.text;
+        return message;
     }
     public void SetString(string txt)
     {
         randText.text = txt;
+    }
+    public int GetNum(){
+        return number;
     }
 }
