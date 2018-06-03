@@ -19,6 +19,7 @@ public class CarController : MonoBehaviour
     float speed = 1f;
     Coding abc;
     Crashed crash;
+    SetText randText;
 
 
     void Start()
@@ -76,7 +77,12 @@ public class CarController : MonoBehaviour
                 */
             }
 
-
+            if (Vector3.Distance(transform.position, mapCoord[5, 0]) <= 0)
+            {
+                Debug.Log("entered.");
+                randText = FindObjectOfType<SetText>();
+                randText.SetString("Congratulations! You won!");
+            }
 
 
 

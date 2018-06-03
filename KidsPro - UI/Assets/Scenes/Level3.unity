@@ -476,6 +476,7 @@ GameObject:
   - component: {fileID: 112231144}
   - component: {fileID: 112231143}
   - component: {fileID: 112231142}
+  - component: {fileID: 112231146}
   m_Layer: 5
   m_Name: RandText
   m_TagString: Untagged
@@ -554,6 +555,17 @@ RectTransform:
   m_AnchoredPosition: {x: -67.5, y: 343.9}
   m_SizeDelta: {x: 1759.1, y: 163.7}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &112231146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 112231141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb05ebcbc2f5204380166d04c09285a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &116721306
 Prefab:
   m_ObjectHideFlags: 0
@@ -1178,6 +1190,28 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1109966193}
         m_MethodName: Read
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1836568453}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 112231142}
+        m_MethodName: Generate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8521,12 +8555,12 @@ GameObject:
   - component: {fileID: 1836568456}
   - component: {fileID: 1836568455}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ResetNo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1836568454
 RectTransform:
   m_ObjectHideFlags: 0

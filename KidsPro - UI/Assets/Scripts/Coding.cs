@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Coding : MonoBehaviour
 {
@@ -32,21 +33,28 @@ public class Coding : MonoBehaviour
        
         
         car.enabled = false;
-        for (int i = 0; i < 5;i++){
+        Update();
 
-            ans.Add(map[i, 0]);
-        }
         
     }
 
     // Update is called once per frame
     void Update()
-    {   
+    {
+        //Debug.Log("Distance: "+Vector3.Distance(transform.position, map[5, 0]));
+
        if(row<0 || col < 0)
         {
             crash = FindObjectOfType<Crashed>();
             crash.CallCrash();
             
+        }
+
+        if(Vector3.Distance(transform.position, map[5,0]) <= 1f)
+        {
+            Debug.Log("entered.");
+            randText = FindObjectOfType<SetText>();
+            randText.SetString("Congratulations! You won!");
         }
     }
 
@@ -311,9 +319,16 @@ public class Coding : MonoBehaviour
                 }
             }
         }
-     
-        randText = FindObjectOfType<SetText>();
-        randText.SetString("Objective:Odd Number-> Go up. Even number -> Go right.\nNumber: " + Random.Range(1, 10));
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name == "Level3")
+        {
+            randText = FindObjectOfType<SetText>();
+            randText.SetString("Objective:Odd Number-> Go up. Even number -> Go right.\nNumber: " + Random.Range(1, 10));
+        }
+        else if(currentScene.name == "Level2"){
+            randText.SetString("Objective: Collect 3 flags.");
+        }
+        else randText.SetString("");
     }
 
     public void Text_Changed(string changeText)
