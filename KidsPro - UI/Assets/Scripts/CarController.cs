@@ -27,7 +27,7 @@ public class CarController : MonoBehaviour
         Debug.Log(transform.localPosition);
         abc = FindObjectOfType<Coding>();
         mapCoord = abc.GetCoord();
-        levelAns = abc.GetAns();
+
         wayPointList.Add(mapCoord[0, 0]);
         //startTime = Time.time;
         //current = 0;
@@ -75,12 +75,6 @@ public class CarController : MonoBehaviour
                 */
             }
 
-            if (Vector3.Distance(mapCoord[4, 0], transform.localPosition) < 0.1f)
-            {
-                Debug.Log("entered.");
-                randText = FindObjectOfType<SetText>();
-                randText.SetString("Congratulations! You won!");
-            }
 
 
 

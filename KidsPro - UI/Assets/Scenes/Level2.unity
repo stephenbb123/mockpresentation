@@ -921,7 +921,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1109966193}
-        m_MethodName: Read
+        m_MethodName: SetWayPoint
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1711,7 +1711,6 @@ GameObject:
   - component: {fileID: 385493867}
   - component: {fileID: 385493866}
   - component: {fileID: 385493868}
-  - component: {fileID: 385493869}
   m_Layer: 5
   m_Name: Text Plane
   m_TagString: Untagged
@@ -1790,17 +1789,6 @@ MonoBehaviour:
   randText: {fileID: 385493866}
   message: 
   number: 0
---- !u!114 &385493869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 385493864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cb05ebcbc2f5204380166d04c09285a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &397440341
 GameObject:
   m_ObjectHideFlags: 0
@@ -3602,7 +3590,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1109966193}
+      - m_Target: {fileID: 385493868}
         m_MethodName: Clear
         m_Mode: 1
         m_Arguments:
@@ -3614,6 +3602,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 116721311}
+        m_MethodName: Clear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1109966193}
         m_MethodName: Clear
         m_Mode: 1
         m_Arguments:
@@ -3920,7 +3919,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1109966193}
+      - m_Target: {fileID: 0}
         m_MethodName: Clear
         m_Mode: 1
         m_Arguments:
@@ -5326,6 +5325,7 @@ GameObject:
   - component: {fileID: 1109966194}
   - component: {fileID: 1109966192}
   - component: {fileID: 1109966193}
+  - component: {fileID: 1109966196}
   - component: {fileID: 1109966195}
   m_Layer: 5
   m_Name: Coding Panel
@@ -5393,7 +5393,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1109966190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85c125d20c3e84222ab252a5e2202bfa, type: 3}
+  m_Script: {fileID: 11500000, guid: c5944d3d7b64bc34a89a2ab61db9ec36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!222 &1109966194
@@ -5411,6 +5411,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 501f806dfdbf04378b30cd04b2857d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1109966196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1109966190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c125d20c3e84222ab252a5e2202bfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1195438247
@@ -6849,7 +6860,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1109966193}
+      - m_Target: {fileID: 1109966196}
         m_MethodName: Text_Changed
         m_Mode: 0
         m_Arguments:

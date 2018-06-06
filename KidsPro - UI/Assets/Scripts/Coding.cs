@@ -13,7 +13,6 @@ public class Coding : MonoBehaviour
     SceneObject scene;
     CarController car;
     int counter;
-    List <Vector3> ans = new List<Vector3>();
     int row;
     int col;
     int num;
@@ -28,12 +27,7 @@ public class Coding : MonoBehaviour
 
 
     void Start()
-    {   car = FindObjectOfType<CarController>();
-
-
-        Debug.Log("map[4,0]:"+map[4, 0]);
-        car.enabled = false;
-        Update();
+    {  
 
         
     }
@@ -41,20 +35,11 @@ public class Coding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       Debug.Log("Distance: "+Vector3.Distance(transform.localPosition, map[4, 0]));
-    
-
-       if(row<0 || col < 0)
-        {
-            crash = FindObjectOfType<Crashed>();
-            crash.CallCrash();
-            
-        }
 
 
     }
 
-    public void Read()
+    public List<string> Read()
     {  
         string stat;
 
@@ -82,12 +67,11 @@ public class Coding : MonoBehaviour
                 }
             }
         }
-        this.finish();
-        this.SetWayPoint();
+        return commands;
     }
 
 
-    public void SetWayPoint()
+   /* public void SetWayPoint()
     {
 
         car = FindObjectOfType<CarController>();
@@ -291,7 +275,7 @@ public class Coding : MonoBehaviour
             car.enabled = true;
             //car.Movement();
         }
-
+        */
 
 
     public List<string> GetCommands(){
@@ -302,16 +286,11 @@ public class Coding : MonoBehaviour
         return map;
     }
 
-    public List<Vector3> GetAns(){
-        return ans;
-    }
 
     public void Clear(){
-       
-       
-            row = 0;
-            col = 0;
-
+        row = 0;
+        col = 0;
+        car = FindObjectOfType<CarController>();
         car.SetWayPoints(map[row, col]);
         commands.Clear();
         foreach (Transform child in gameObject.transform)
@@ -332,6 +311,7 @@ public class Coding : MonoBehaviour
             randText.SetString("Objective:Odd Number-> Go up. Even number -> Go right.\nNumber: " + Random.Range(1, 10));
         }
         else if(currentScene.name == "Level2"){
+            randText = FindObjectOfType<SetText>();
             randText.SetString("Objective: Collect 3 flags.");
         }
         else randText.SetString("");
@@ -340,16 +320,25 @@ public class Coding : MonoBehaviour
     public void Text_Changed(string changeText)
     {
          num = int.Parse(changeText);
-
-
+    }
+    public int getUserInput()
+    {
+        return num;
+    }
+    public void Crashed()
+    {
+            randText = FindObjectOfType<SetText>();
+            transform.localPosition = map[0, 0];
+            randText.SetString("Crashed!Please try again");
+        
+    }
+    public void LogicError()
+    {
+        randText = FindObjectOfType<SetText>();
+        randText.SetString("Your programme got wrong.Please try again.");
     }
 
-    public void finish(){
-        car = FindObjectOfType<CarController>();
-        if (car.transform.localPosition == map[4,0]){
-            Debug.Log("You win!");
-        }
-    }
+    
 }
 
 /*  

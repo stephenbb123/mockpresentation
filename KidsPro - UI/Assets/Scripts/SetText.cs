@@ -51,4 +51,22 @@ public class SetText : MonoBehaviour {
     public int GetNum(){
         return number;
     }
+    public void Clear()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        switch (currentScene.name)
+        {
+            case "Level1":
+                randText.text = "Go to the position of the white flag .";
+                break;
+            case "Level2":
+                randText.text = "Objective: Collect 3 Flags and go to the end point";
+                break;
+            case "Level3":
+                number = Random.Range(1, 10);
+                randText.text = "Odd Number-> Go up. Even number -> Go right.\nNumber: ";
+                break;
+        }
+    }
 }
