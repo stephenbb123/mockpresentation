@@ -29,9 +29,9 @@ public class Coding : MonoBehaviour
 
     void Start()
     {   car = FindObjectOfType<CarController>();
-       
-       
-        
+
+
+        Debug.Log("map[4,0]:"+map[4, 0]);
         car.enabled = false;
         Update();
 
@@ -41,7 +41,8 @@ public class Coding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       Debug.Log("Distance: "+Vector3.Distance(transform.position, map[4, 0]));
+       Debug.Log("Distance: "+Vector3.Distance(transform.localPosition, map[4, 0]));
+    
 
        if(row<0 || col < 0)
         {
@@ -116,29 +117,34 @@ public class Coding : MonoBehaviour
 
             if (commands[i] == "if")
             {
-
-                number = randText.GetNum();
-                start = commands.IndexOf("{");
-                end = commands.IndexOf("}");
-                int ifIndex = commands.IndexOf("if");
-                Debug.Log("Start index:" + start + ", end " + end);
-
-                if (number % 2 == 1)
+                if (commands.Contains("else"))
                 {
-                    if (commands.Contains("odd"))
+
+
+                    number = randText.GetNum();
+                    start = commands.IndexOf("{");
+                    end = commands.IndexOf("}");
+                    int ifIndex = commands.IndexOf("if");
+                    Debug.Log("Start index:" + start + ", end " + end);
+
+                    if (number % 2 == 1)
                     {
-                        ifIndex = commands.IndexOf("odd");
-                        start = ifIndex + 1;
-                        end = commands.IndexOf("}");
-                        if (start > end)
-                        { end = commands.LastIndexOf("}"); }
-                        if(commands[start+1]=="up"){
-                            for (int a = start + 1; a < end; a++){
-                                
-                            commands.Insert(end + 1, commands[a]);
+                        if (commands.Contains("odd"))
+                        {
+                            ifIndex = commands.IndexOf("odd");
+                            start = ifIndex + 1;
+                            end = commands.IndexOf("}");
+                            if (start > end)
+                            { end = commands.LastIndexOf("}"); }
+                            if (commands[start + 1] == "up")
+                            {
+                                for (int a = start + 1; a < end; a++)
+                                {
+
+                                    commands.Insert(end + 1, commands[a]);
 
                                 }
-                        }
+                            }
 
                             else
                             {
@@ -150,7 +156,7 @@ public class Coding : MonoBehaviour
 
                     else if (commands.Contains("even"))
                     {
-                        
+
                         start = commands.IndexOf("else");
                         end = commands.LastIndexOf("}");
                         if (commands[start + 1] == "odd")
@@ -170,44 +176,21 @@ public class Coding : MonoBehaviour
                             }
                         }
                     }
-                             
-                if(number % 2==0){
-                    if (commands.Contains("even"))
-                    {
-                        ifIndex = commands.IndexOf("even");
-                        start = ifIndex + 1;
-                        end = commands.IndexOf("}");
-                        if (start > end)
-                        { end = commands.LastIndexOf("}"); }
-                        if(commands[start+1] =="right"){
-                        for (int a = start + 1; a < end; a++)
-                        { 
-                                commands.Insert(end + 1, commands[a]);
 
-                                }    
-                        }
-                            else
-                            {
-                                randText.SetString("Wrong Way.Please reset and try again.");
-                                break;
-                            }
-                        }
-                    if (commands.Contains("odd"))
+                    if (number % 2 == 0)
                     {
-                        ifIndex = commands.IndexOf("else");
-                        start = ifIndex + 2;
-                        end = commands.LastIndexOf("}");
-                        if (commands[ifIndex + 1] == "even")
+                        if (commands.Contains("even"))
                         {
+                            ifIndex = commands.IndexOf("even");
+                            start = ifIndex + 1;
+                            end = commands.IndexOf("}");
+                            if (start > end)
+                            { end = commands.LastIndexOf("}"); }
                             if (commands[start + 1] == "right")
                             {
-                                for (int b = start + 1; b < end; b++)
+                                for (int a = start + 1; a < end; a++)
                                 {
-                                    if (commands[b].Equals("up"))
-                                    {
-                                        commands.Insert(end + 1, commands[b]);
-
-                                    }
+                                    commands.Insert(end + 1, commands[a]);
 
                                 }
                             }
@@ -216,12 +199,41 @@ public class Coding : MonoBehaviour
                                 randText.SetString("Wrong Way.Please reset and try again.");
                                 break;
                             }
+                        }
+                        if (commands.Contains("odd"))
+                        {
+                            ifIndex = commands.IndexOf("else");
+                            start = ifIndex + 2;
+                            end = commands.LastIndexOf("}");
+                            if (commands[ifIndex + 1] == "even")
+                            {
+                                if (commands[start + 1] == "right")
+                                {
+                                    for (int b = start + 1; b < end; b++)
+                                    {
+                                        if (commands[b].Equals("up"))
+                                        {
+                                            commands.Insert(end + 1, commands[b]);
+
+                                        }
+
+                                    }
+                                }
+                                else
+                                {
+                                    randText.SetString("Wrong Way.Please reset and try again.");
+                                    break;
+                                }
 
 
+                            }
                         }
                     }
-                    }
+                } else
+                {
+                    randText.SetString("There should be a else statement.");
                 }
+            }
                     
 
 

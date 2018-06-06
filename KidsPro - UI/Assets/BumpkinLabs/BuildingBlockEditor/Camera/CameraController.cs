@@ -48,7 +48,7 @@ namespace BumpkinLabs.IGE
 
 		void Update()
 		{
-			if (Input.GetMouseButton(2))
+            if (Input.GetTouch(0).position!=null)
 			{
 				if (Input.GetKey(KeyCode.LeftAlt))
 				{

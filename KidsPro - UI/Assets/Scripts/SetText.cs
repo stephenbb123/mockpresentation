@@ -17,7 +17,7 @@ public class SetText : MonoBehaviour {
                 randText.text = "Go to the position of the white flag .";
                 break;
             case "Level2":
-                randText.text = "Collect 3 flags.";
+                randText.text = "Objective: Collect 3 Flags and go to the end point";
                 break;
             case "Level3":
                 number = Random.Range(1, 10);

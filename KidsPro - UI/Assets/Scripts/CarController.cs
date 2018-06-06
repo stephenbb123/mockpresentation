@@ -57,8 +57,6 @@ public class CarController : MonoBehaviour
                 //transform.localPosition = wayPointList[current];
                 //transform.Translate(Vector3.left * 30 * Time.deltaTime);
                 transform.localPosition = Vector3.Lerp(wayPointList[current - 1], wayPointList[current], fracJourney);
-                Debug.Log("Now at: " + transform.localPosition);
-                Debug.Log("[Current]: " + wayPointList[current]);
                 startTime = Time.time;
                 
             }
@@ -77,7 +75,7 @@ public class CarController : MonoBehaviour
                 */
             }
 
-            if (Vector3.Distance(transform.position, mapCoord[4, 0]) <= 0)
+            if (Vector3.Distance(mapCoord[4, 0], transform.localPosition) < 0.1f)
             {
                 Debug.Log("entered.");
                 randText = FindObjectOfType<SetText>();
@@ -89,12 +87,7 @@ public class CarController : MonoBehaviour
 
         } 
 
-        abc = FindObjectOfType<Coding>();
-        //mapCoord = abc.GetCoord();
-        if (transform.position == abc.map[5, 0])
-        {
-            Debug.Log("You win!");
-        }
+      
         
     }
 

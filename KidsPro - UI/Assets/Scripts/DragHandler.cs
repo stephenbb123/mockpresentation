@@ -21,7 +21,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         Debug.Log(startParent.name);
         if (startParent.name.Equals("Slot"))
         {
-            newIcon = Instantiate(item, startPosition, Quaternion.identity, startParent);
+            newIcon = Instantiate(item, startPosition, parent.rotation, startParent);
         }
         GetComponent<CanvasGroup>().blocksRaycasts = false;
         gameObject.transform.SetParent(parent);
@@ -40,6 +40,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         {
             Destroy(item);
         }
+        item.transform.localScale = parent.localScale;
         item = null;
 		GetComponent<CanvasGroup>().blocksRaycasts = true;
 		if(transform.parent == startParent){

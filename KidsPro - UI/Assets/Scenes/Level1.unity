@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 8
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -54,11 +55,10 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 9
+    serializedVersion: 10
     m_Resolution: 2
     m_BakeResolution: 40
-    m_TextureWidth: 1024
-    m_TextureHeight: 1024
+    m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -147,7 +147,7 @@ Mesh:
   m_IndexBuffer: 000001000200000003000100
   m_Skin: []
   m_VertexData:
-    m_CurrentChannels: 27
+    serializedVersion: 2
     m_VertexCount: 4
     m_Channels:
     - stream: 0
@@ -163,6 +163,10 @@ Mesh:
       format: 0
       dimension: 0
     - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
       offset: 24
       format: 0
       dimension: 2
@@ -170,6 +174,18 @@ Mesh:
       offset: 32
       format: 0
       dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
     - stream: 0
       offset: 0
       format: 0
@@ -731,6 +747,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -806,7 +823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1, y: 763}
+  m_AnchoredPosition: {x: -1, y: 762.99994}
   m_SizeDelta: {x: 1400.4, y: 92.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &168375289
@@ -1223,7 +1240,7 @@ Mesh:
   m_IndexBuffer: 000001000200000003000100040005000000040006000500070008000400070009000800
   m_Skin: []
   m_VertexData:
-    m_CurrentChannels: 27
+    serializedVersion: 2
     m_VertexCount: 10
     m_Channels:
     - stream: 0
@@ -1239,6 +1256,10 @@ Mesh:
       format: 0
       dimension: 0
     - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
       offset: 24
       format: 0
       dimension: 2
@@ -1246,6 +1267,18 @@ Mesh:
       offset: 32
       format: 0
       dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
     - stream: 0
       offset: 0
       format: 0
@@ -1357,7 +1390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -1000, y: -1558.3154}
+  m_AnchoredPosition: {x: -1000.0001, y: -1558.3154}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231713443
@@ -1658,7 +1691,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 423924561}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -378.22, y: -166.7, z: -245.53}
+  m_LocalPosition: {x: -378.22, y: -148.7, z: -245.53}
   m_LocalScale: {x: 15.416227, y: 15.416227, z: 15.416227}
   m_Children: []
   m_Father: {fileID: 592480697}
@@ -1698,6 +1731,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 4491cb9e57b1f6d41b8c756cb3965b26, type: 3}
   m_StaticBatchInfo:
@@ -1899,6 +1933,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -1983,6 +2018,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 5188c7492ef51d143a7128aa9700788a, type: 2}
   m_StaticBatchInfo:
@@ -2303,6 +2339,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 9b0509cf5979e03459b722142113657c, type: 2}
   m_StaticBatchInfo:
@@ -2389,6 +2426,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 792fa418de0281e4bab622f9a60c88b2, type: 2}
   m_StaticBatchInfo:
@@ -2727,7 +2765,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 664261609}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -614.63513, y: -150.12315, z: -203.6095}
+  m_LocalPosition: {x: -614.63513, y: -150, z: -203.6095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 592480697}
@@ -2753,6 +2791,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b665a7da9264dcc4dbfded680b2959e7, type: 2}
   m_StaticBatchInfo:
@@ -3064,6 +3103,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 5188c7492ef51d143a7128aa9700788a, type: 2}
   m_StaticBatchInfo:
@@ -3168,6 +3208,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -3455,6 +3496,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -3748,7 +3790,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000072479, y: -399.6}
+  m_AnchoredPosition: {x: -0.00012207031, y: -399.60004}
   m_SizeDelta: {x: 0.00024414, y: -664.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &842069449
@@ -3894,7 +3936,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.179}
   m_AnchorMin: {x: 0.20811117, y: 0}
   m_AnchorMax: {x: 0.8194224, y: 0.186}
-  m_AnchoredPosition: {x: -36, y: -921}
+  m_AnchoredPosition: {x: -36, y: -920.99994}
   m_SizeDelta: {x: -764.2, y: 114.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &884931225
@@ -4119,22 +4161,22 @@ Prefab:
     - target: {fileID: 224479624847359712, guid: 3182b1124f1754243a71745bdd91ff27,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224479624847359712, guid: 3182b1124f1754243a71745bdd91ff27,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224479624847359712, guid: 3182b1124f1754243a71745bdd91ff27,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224479624847359712, guid: 3182b1124f1754243a71745bdd91ff27,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224479624847359712, guid: 3182b1124f1754243a71745bdd91ff27,
         type: 2}
@@ -4144,7 +4186,7 @@ Prefab:
     - target: {fileID: 224479624847359712, guid: 3182b1124f1754243a71745bdd91ff27,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224479624847359712, guid: 3182b1124f1754243a71745bdd91ff27,
         type: 2}
@@ -4154,7 +4196,7 @@ Prefab:
     - target: {fileID: 224479624847359712, guid: 3182b1124f1754243a71745bdd91ff27,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224479624847359712, guid: 3182b1124f1754243a71745bdd91ff27,
         type: 2}
@@ -4223,6 +4265,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -4307,6 +4350,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 6654366d45d22054abd260171b0f7c04, type: 2}
   m_StaticBatchInfo:
@@ -4646,7 +4690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 640.91846, y: 17.154022}
+  m_AnchoredPosition: {x: 640.91846, y: 17.153992}
   m_SizeDelta: {x: 212.80469, y: 1732.6528}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1119757423
@@ -4847,6 +4891,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b85462f07b61b1549819ea65f816cc0c, type: 2}
   m_StaticBatchInfo:
@@ -5402,6 +5447,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a065fa43e83724ae5aa3b11937b029cc, type: 2}
   m_StaticBatchInfo:
@@ -5474,6 +5520,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 5188c7492ef51d143a7128aa9700788a, type: 2}
   m_StaticBatchInfo:
@@ -5565,6 +5612,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b665a7da9264dcc4dbfded680b2959e7, type: 2}
   m_StaticBatchInfo:
@@ -5667,6 +5715,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 5188c7492ef51d143a7128aa9700788a, type: 2}
   m_StaticBatchInfo:
@@ -6300,6 +6349,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 5188c7492ef51d143a7128aa9700788a, type: 2}
   m_StaticBatchInfo:
@@ -6390,22 +6440,22 @@ Prefab:
     - target: {fileID: 224271622871824834, guid: d7244b486e93f5245b190a1f83958f42,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224271622871824834, guid: d7244b486e93f5245b190a1f83958f42,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224271622871824834, guid: d7244b486e93f5245b190a1f83958f42,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224271622871824834, guid: d7244b486e93f5245b190a1f83958f42,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224271622871824834, guid: d7244b486e93f5245b190a1f83958f42,
         type: 2}
@@ -6415,7 +6465,7 @@ Prefab:
     - target: {fileID: 224271622871824834, guid: d7244b486e93f5245b190a1f83958f42,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224271622871824834, guid: d7244b486e93f5245b190a1f83958f42,
         type: 2}
@@ -6425,7 +6475,7 @@ Prefab:
     - target: {fileID: 224271622871824834, guid: d7244b486e93f5245b190a1f83958f42,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224271622871824834, guid: d7244b486e93f5245b190a1f83958f42,
         type: 2}
@@ -6673,7 +6723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.36475, y: 0.4481126}
   m_AnchorMax: {x: 0.63577086, y: 1}
-  m_AnchoredPosition: {x: 0.49998474, y: -85.5}
+  m_AnchoredPosition: {x: 0.5, y: -85.5}
   m_SizeDelta: {x: 3479, y: -227}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1669638990
@@ -6822,7 +6872,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1747346007}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -887.31, y: -167, z: -237.99}
+  m_LocalPosition: {x: -887.31, y: -149, z: -237.99}
   m_LocalScale: {x: 23.20554, y: 23.205505, z: 23.205528}
   m_Children: []
   m_Father: {fileID: 592480697}
@@ -6862,6 +6912,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 4491cb9e57b1f6d41b8c756cb3965b26, type: 3}
   m_StaticBatchInfo:
@@ -7140,22 +7191,22 @@ Prefab:
     - target: {fileID: 224903291135828870, guid: 50605d74aadd92c4eb601d5ac97efb76,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224903291135828870, guid: 50605d74aadd92c4eb601d5ac97efb76,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -49.999996
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224903291135828870, guid: 50605d74aadd92c4eb601d5ac97efb76,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224903291135828870, guid: 50605d74aadd92c4eb601d5ac97efb76,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224903291135828870, guid: 50605d74aadd92c4eb601d5ac97efb76,
         type: 2}
@@ -7165,7 +7216,7 @@ Prefab:
     - target: {fileID: 224903291135828870, guid: 50605d74aadd92c4eb601d5ac97efb76,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224903291135828870, guid: 50605d74aadd92c4eb601d5ac97efb76,
         type: 2}
@@ -7175,7 +7226,7 @@ Prefab:
     - target: {fileID: 224903291135828870, guid: 50605d74aadd92c4eb601d5ac97efb76,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224903291135828870, guid: 50605d74aadd92c4eb601d5ac97efb76,
         type: 2}
@@ -7818,22 +7869,22 @@ Prefab:
     - target: {fileID: 224933428025499432, guid: e17257f9ec9f3ec45b8af7b216dcbe5f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224933428025499432, guid: e17257f9ec9f3ec45b8af7b216dcbe5f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224933428025499432, guid: e17257f9ec9f3ec45b8af7b216dcbe5f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224933428025499432, guid: e17257f9ec9f3ec45b8af7b216dcbe5f,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224933428025499432, guid: e17257f9ec9f3ec45b8af7b216dcbe5f,
         type: 2}
@@ -7843,7 +7894,7 @@ Prefab:
     - target: {fileID: 224933428025499432, guid: e17257f9ec9f3ec45b8af7b216dcbe5f,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224933428025499432, guid: e17257f9ec9f3ec45b8af7b216dcbe5f,
         type: 2}
@@ -7853,7 +7904,7 @@ Prefab:
     - target: {fileID: 224933428025499432, guid: e17257f9ec9f3ec45b8af7b216dcbe5f,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224933428025499432, guid: e17257f9ec9f3ec45b8af7b216dcbe5f,
         type: 2}
@@ -7926,6 +7977,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 9ed3c25b3c2f29f4cae18baacc7dcb9f, type: 2}
   m_StaticBatchInfo:
@@ -8005,6 +8057,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 9ed3c25b3c2f29f4cae18baacc7dcb9f, type: 2}
   m_StaticBatchInfo:
@@ -8072,7 +8125,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.019000001, y: 0.030100334}
   m_AnchorMax: {x: 0.98100007, y: 0.9733445}
-  m_AnchoredPosition: {x: 0, y: -0.5000458}
+  m_AnchoredPosition: {x: 0, y: -0.50006104}
   m_SizeDelta: {x: 1531.9443, y: 720.7074}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1998907454
@@ -8142,7 +8195,7 @@ Mesh:
   m_IndexBuffer: 000001000200020001000300
   m_Skin: []
   m_VertexData:
-    m_CurrentChannels: 11
+    serializedVersion: 2
     m_VertexCount: 4
     m_Channels:
     - stream: 0
@@ -8158,9 +8211,25 @@ Mesh:
       format: 0
       dimension: 0
     - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
       offset: 24
       format: 0
       dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
     - stream: 0
       offset: 0
       format: 0
@@ -8278,6 +8347,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 819389119}
   m_StaticBatchInfo:
