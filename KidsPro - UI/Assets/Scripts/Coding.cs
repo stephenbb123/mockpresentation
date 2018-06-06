@@ -20,11 +20,11 @@ public class Coding : MonoBehaviour
     Crashed crash;
     Flag flag;
     SetText randText;
-    public Vector3[,] map = { {new Vector3 (-420f, -137f, -165f), new Vector3(),new Vector3 (-420f,-137f,64f),new Vector3 () } ,
+    public Vector3[,] map = { {new Vector3 (-420f, -137f, -165f), new Vector3(),new Vector3 (),new Vector3 () } ,
                                             { new Vector3(-514f, -137f, -165f), new Vector3(-514f, -137f, -63f), new Vector3(-514f, -137f, 64f),new Vector3 (-514f, -137f, 148f) },
                                             { new Vector3(-608f, -137f, -165f), new Vector3(), new Vector3(),new Vector3 (-608f, -137f, 148f) },
                                             { new Vector3(-702f, -137f, -165f), new Vector3(-702f, -137f, -63f),new Vector3 (-702f, -137f, 64f),new Vector3 (-702f, -137f, 148f) } ,
-                                            { new Vector3(-796f, -137f, -165f), new Vector3(), new Vector3(-796f,-137f,64f),new Vector3 () }};
+                                            { new Vector3(-796f, -137f, -165f), new Vector3(), new Vector3(),new Vector3 () }};
 
 
     void Start()
@@ -41,7 +41,7 @@ public class Coding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Distance: "+Vector3.Distance(transform.position, map[5, 0]));
+       Debug.Log("Distance: "+Vector3.Distance(transform.position, map[4, 0]));
 
        if(row<0 || col < 0)
         {
@@ -50,12 +50,7 @@ public class Coding : MonoBehaviour
             
         }
 
-        if(Vector3.Distance(transform.position, map[5,0]) <= 1f)
-        {
-            Debug.Log("entered.");
-            randText = FindObjectOfType<SetText>();
-            randText.SetString("Congratulations! You won!");
-        }
+
     }
 
     public void Read()
@@ -86,9 +81,8 @@ public class Coding : MonoBehaviour
                 }
             }
         }
-
+        this.finish();
         this.SetWayPoint();
-
     }
 
 
@@ -338,6 +332,12 @@ public class Coding : MonoBehaviour
 
     }
 
+    public void finish(){
+        car = FindObjectOfType<CarController>();
+        if (car.transform.localPosition == map[4,0]){
+            Debug.Log("You win!");
+        }
+    }
 }
 
 /*  

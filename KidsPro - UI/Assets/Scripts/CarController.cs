@@ -77,7 +77,7 @@ public class CarController : MonoBehaviour
                 */
             }
 
-            if (Vector3.Distance(transform.position, mapCoord[5, 0]) <= 0)
+            if (Vector3.Distance(transform.position, mapCoord[4, 0]) <= 0)
             {
                 Debug.Log("entered.");
                 randText = FindObjectOfType<SetText>();
@@ -87,8 +87,14 @@ public class CarController : MonoBehaviour
 
 
 
+        } 
+
+        abc = FindObjectOfType<Coding>();
+        //mapCoord = abc.GetCoord();
+        if (transform.position == abc.map[5, 0])
+        {
+            Debug.Log("You win!");
         }
-       
         
     }
 
@@ -121,8 +127,6 @@ public class CarController : MonoBehaviour
     {
         return wayPointList;
     }
-
-    
 }
 
 /* void OnTriggerEnter(Collider other)
