@@ -328,7 +328,8 @@ public class Coding : MonoBehaviour
     public void Crashed()
     {
             randText = FindObjectOfType<SetText>();
-            transform.localPosition = map[0, 0];
+        car = FindObjectOfType<CarController>();
+        car.transform.localPosition = map[0, 0];
             randText.SetString("Crashed!Please try again");
         
     }

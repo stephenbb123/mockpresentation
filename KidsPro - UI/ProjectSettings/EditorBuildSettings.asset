@@ -32,4 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Classroom.unity
     guid: 56457384a969248dbb39edc059e825ff
+  - enabled: 1
+    path: Assets/Scenes/Sequence.unity
+    guid: 2f308e7c1d82e5648b0e8810c2c3771f
+  - enabled: 1
+    path: Assets/Scenes/Conditional.unity
+    guid: 76b25879f7aa2b74694b4b94395d5bd7
+  - enabled: 1
+    path: Assets/Scenes/Repetition.unity
+    guid: a3de541d6b1f5584eaa4876337532d54
   m_configObjects: {}
