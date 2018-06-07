@@ -8,21 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 9876300239da040b783e8aa3ad0acb22
-  - enabled: 0
-    path: Assets/Scenes/Setting.unity
-    guid: 6984466516f614b08b6cb4da3bc5d2c9
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 2fe05d5b333b1ee418098c3c573e02ca
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: d3405cefa0cce37479bbd158954d4cc7
-  - enabled: 1
-    path: Assets/Scenes/GamePaused.unity
-    guid: 98357629851144de1a68b43eba11a8aa
-  - enabled: 1
-    path: Assets/Scenes/Challenge.unity
-    guid: fa5ff61de9bf0463ea270338ceed861f
   - enabled: 1
     path: Assets/Scenes/Building.unity
     guid: 29eff63f0ef5b2440bd080946c27e20f
@@ -31,14 +22,8 @@ EditorBuildSettings:
     guid: d0bbc6c5f310fd54b99fa3f4424914d7
   - enabled: 1
     path: Assets/Scenes/Classroom.unity
-    guid: 56457384a969248dbb39edc059e825ff
+    guid: c03fce1cd8118314db9a572809d70dfb
   - enabled: 1
-    path: Assets/Scenes/Sequence.unity
-    guid: 2f308e7c1d82e5648b0e8810c2c3771f
-  - enabled: 1
-    path: Assets/Scenes/Conditional.unity
-    guid: 76b25879f7aa2b74694b4b94395d5bd7
-  - enabled: 1
-    path: Assets/Scenes/Repetition.unity
-    guid: a3de541d6b1f5584eaa4876337532d54
+    path: Assets/Scenes/Challenge.unity
+    guid: f958b1c6b7e29d049b22c695e022b1b2
   m_configObjects: {}

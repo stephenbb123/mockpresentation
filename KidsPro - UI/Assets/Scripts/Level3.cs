@@ -13,7 +13,7 @@ public class Level3 : MonoBehaviour
     SceneObject scene;
     CarController car;
     int counter;
-
+    List<string> userInput = new List<string>();
     int row;
     int col;
     int num;
@@ -39,6 +39,8 @@ public class Level3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        randText = FindObjectOfType<SetText>();
+            num = randText.GetNum();
         
             if (row < 0 || col < 0)
             {
@@ -47,7 +49,7 @@ public class Level3 : MonoBehaviour
         if (Vector3.Distance(map[3, 0], car.transform.localPosition) < 0.1f|| Vector3.Distance(map[1,3], car.transform.localPosition) < 0.1f)
         {
             randText = FindObjectOfType<SetText>();
-            randText.SetString("Congratulations! You won!");
+            randText.SetString("Congratulations! You won!\n The number is:"+num);
         }
         if (Vector3.Distance(car.transform.localPosition, Vector3.zero) < 0.1f)
         {
@@ -90,15 +92,22 @@ public class Level3 : MonoBehaviour
                         start = commands.IndexOf("{");
                         end = commands.IndexOf("}");
                         number = end+1;
-                        for (int y = end+1; y < commands.Count; y++)
+                        for (int n = 0; n < end; n++)
                         {
+                           userInput.Add(commands[n]);
+                           
+                        }
+                       /* for (int y = end+1; y < commands.Count; y++)
+                        {   
                             //commands.Insert(number + 1, commands[y]);
                             commands.RemoveAt(number);
-                        }
+                        }*/
+                        
                     }
                     else
                     {
                         randText.SetString("You got a wrong way.1");
+
                     }
                 }
                 else if (commands[ifIndex + 1].Equals("even"))
@@ -108,11 +117,15 @@ public class Level3 : MonoBehaviour
                         start = commands.IndexOf("else");
                         end = commands.LastIndexOf("}");
                         number = end;
-                        for (int y = ifIndex; y < start - 1; y++)
+                        for (int n = start+1; n < end; n++)
+                        {
+                         userInput.Add(commands[n]);
+                        }
+                        /*for (int y = ifIndex; y < start; y++)
                         {
                             //commands.Insert(number + 1, commands[y]);
                             commands.RemoveAt(ifIndex);
-                        }
+                        }*/
                     }
                     else
                     {
@@ -135,15 +148,20 @@ public class Level3 : MonoBehaviour
                         start = commands.IndexOf("{");
                         end = commands.IndexOf("else");
                         number = end;
-                        for (int y = end; y < commands.Count; y++)
+                        for(int n = 0; n < end; n++)
+                        {
+                            userInput.Add(commands[n]);
+                        }
+                        break;
+                        /*for (int y = end; y < commands.Count; y++)
                         {
                             //commands.Insert(number + 1, commands[y]);
                             commands.RemoveAt(number);
-                        }
+                        }*/
                     }
                     else
                     {
-                        //randText.SetString("You got a wrong way.4");
+                        randText.SetString("You got a wrong way.4");
                     }
                 }
                 else if (commands[ifIndex + 1].Equals("odd"))
@@ -151,17 +169,22 @@ public class Level3 : MonoBehaviour
                     if (commands[ifIndex + 3].Equals("up"))
                     {
                         start = commands.IndexOf("else");
-                        end = commands.IndexOf("}", 2);
+                        end = commands.LastIndexOf("}");
                         number = end;
-                        for (int y = ifIndex; y < start - 1; y++)
+                        for(int n = 0; n < start; n++)
+                        {
+                            userInput.Add(commands[n]);
+                        }
+                        break;
+                        /*for (int y = ifIndex; y < start; y++)
                         {
                             //commands.Insert(number + 1, commands[y]);
                             commands.RemoveAt(ifIndex);
-                        }
+                        }*/
                     }
                     else
                     {
-                        //randText.SetString("You got a wrong way.5");
+                        randText.SetString("You got a wrong way.5");
                     }
                 }
                 else
@@ -174,10 +197,10 @@ public class Level3 : MonoBehaviour
 
 
 
-        for(int i = 0; i < commands.Count; i++)
+        for(int i = 0; i < userInput.Count; i++)
         {
-            Debug.Log("command: "+commands[i]);
-            switch (commands[i])    //if there is no while in the user input
+            Debug.Log("userInput command: "+userInput[i]);
+            switch (userInput[i])    //if there is no while in the user input
             {
                 case "up":
                     row++;

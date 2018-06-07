@@ -10,8 +10,22 @@ namespace BumpkinLabs.IGE
 		private GameObject centreObject;
 		private GameObject offsetObject;
 		public Vector3 rotationAngle;
-		
-		public Vector3 CameraPosition
+        private float curDist = 0;
+        private float lastDist = 0;
+        private float distance = 15;
+        private float pinchSpeed = 0;
+        private float minimumDistance = 5;
+        private float maximumDistance = 100;
+        Touch touchA = new Touch();
+        Touch touchB = new Touch();
+        Vector3 touchToWorldA = new Vector3();
+        Vector3 touchToWorldB = new Vector3();
+        Vector3 center = new Vector3();
+        float rotationSpeed = 10f;
+        float rotation = 0;
+
+
+        public Vector3 CameraPosition
 		{
 			get { return centreObject.transform.position; }
 			set { centreObject.transform.position = value; }
@@ -48,7 +62,7 @@ namespace BumpkinLabs.IGE
 
 		void Update()
 		{
-            if (Input.GetTouch(0).position!=null)
+            if (Input.GetMouseButton(0))
 			{
 				if (Input.GetKey(KeyCode.LeftAlt))
 				{
@@ -56,25 +70,26 @@ namespace BumpkinLabs.IGE
 				}
 				else
 				{
-					rotationAngle.y = Mathf.Repeat(rotationAngle.y + Input.GetAxis("Mouse X") * 5f, 360);
-					rotationAngle.z = Mathf.Repeat(rotationAngle.z - Input.GetAxis("Mouse Y") * 5f, 360);
-					
-				}
+                    rotationAngle.y = Mathf.Repeat(rotationAngle.y + Input.GetAxis("Mouse X") * 5f, 360);
+                    rotationAngle.z = Mathf.Repeat(rotationAngle.z - Input.GetAxis("Mouse Y") * 5f, 360);
+                    
+                }
 			}
+           
+    
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
 
-			float scroll = Input.GetAxis("Mouse ScrollWheel");
+            if (scroll != 0)
+            {
+                Vector3 dir = (offsetObject.transform.position - centreObject.transform.position).normalized;
 
-			if (scroll != 0)
-			{
-				Vector3 dir = (offsetObject.transform.position - centreObject.transform.position).normalized;
+                float dist = Vector3.Distance(offsetObject.transform.position, centreObject.transform.position);
 
-				float dist = Vector3.Distance(offsetObject.transform.position, centreObject.transform.position);
+                dist -= (scroll * 5f);
 
-				dist -= (scroll * 5f);
-
-				offsetObject.transform.position = centreObject.transform.position + (dist * dir);
-			}
-		}
+                offsetObject.transform.position = centreObject.transform.position + (dist * dir);
+            }
+}
 
 		void LateUpdate()
 		{

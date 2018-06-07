@@ -63,7 +63,7 @@ public class Coding : MonoBehaviour
                         
                     
                     
-                    Debug.Log("Count:" + commands.Count);
+                    Debug.Log("Commands:" + stat);
                 }
             }
         }
