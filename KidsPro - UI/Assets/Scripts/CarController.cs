@@ -63,16 +63,7 @@ public class CarController : MonoBehaviour
             else
             {
                 current++;
-
-                /*if (wayPointList[wayPointList.Count-1]!=mapCoord[5,4])
-                {
-                   crash.CallCrash();
-                }
-                if (wayPointList[current]==Vector3.zero)
-                {
-                   crash.CallCrash();
-                }
-                */
+                
             }
 
 
@@ -91,7 +82,6 @@ public class CarController : MonoBehaviour
         row = 0;
         col = 0;
         transform.localPosition = mapCoord[0, 0];
-        Debug.Log(transform.localPosition);
         current = 0;
         wayPointList.Clear();
         wayPointList.Add(mapCoord[0, 0]);

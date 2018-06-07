@@ -1049,7 +1049,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1, y: 762.9999}
+  m_AnchoredPosition: {x: -1, y: 762.99994}
   m_SizeDelta: {x: 1400.4, y: 92.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &168375289
@@ -1274,17 +1274,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1836568453}
         m_MethodName: SetActive
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 112231142}
-        m_MethodName: Generate
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5051,7 +5040,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -399.5996}
+  m_AnchoredPosition: {x: 0, y: -399.59955}
   m_SizeDelta: {x: 0.00024414, y: -664.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &842069449
@@ -5197,7 +5186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.179}
   m_AnchorMin: {x: 0.20811117, y: 0}
   m_AnchorMax: {x: 0.8194224, y: 0.186}
-  m_AnchoredPosition: {x: -36.00006, y: -921.00006}
+  m_AnchoredPosition: {x: -36, y: -920.99994}
   m_SizeDelta: {x: -764.2, y: 114.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &884931225
@@ -7142,7 +7131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 673, y: -1319.3884}
+  m_AnchoredPosition: {x: 801, y: -1274}
   m_SizeDelta: {x: 339.4, y: 143.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1320126729
@@ -9134,8 +9123,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 650.0996, y: 17.399414}
-  m_SizeDelta: {x: 185.2998, y: 1717.3999}
+  m_AnchoredPosition: {x: 618.6, y: 17.399414}
+  m_SizeDelta: {x: 403.5, y: 1717.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1817586954
 MonoBehaviour:
@@ -9149,7 +9138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6627451, b: 0.6745098, a: 1}
+  m_Color: {r: 0.9686275, g: 0.7607844, b: 0.53333336, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -11676,8 +11665,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0025635064, y: -0.010193}
-  m_SizeDelta: {x: 2132.8, y: 2797.4}
+  m_AnchoredPosition: {x: 22.6, y: -0.010193}
+  m_SizeDelta: {x: 2342.8, y: 2797.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2127407157
 MonoBehaviour:
@@ -11700,7 +11689,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4491cb9e57b1f6d41b8c756cb3965b26, type: 3}
-    m_FontSize: 131
+    m_FontSize: 110
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -11711,14 +11700,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Instructions\n\u201CUp\u201D: Go forward\n\u201CDown\u201D: Go backward\n\u201CLeft\u201D:
-    Go left\n\u201CRight\u201D: Go right\n\u201CCycle\u201D: the car moves around
-    from centre buildings\n\u201Cif\u201D: if(condition) {code executed if condition
-    is true}\n\u201Celse\u201D: else {code executed if condition is false}\n\"Condition\":
-    Put after while.\n\u201C{ }\u201D: Used as a pair.\n\u201CReset\u201D:  Reset
-    all commands.\n\u201CGo\u201D : Move the car.\n\u201CBack\u201D:back to last page.\n*Each
-    command can only move the car by 1-step.\n*You have to go to end point in order
-    to win."
+  m_Text: "Instructions\n\n\u201CCycle\u201D: the car moves around from centre buildings\n\u201Cif\u201D:
+    if(condition) {code executed if condition is true}\n\u201Celse\u201D: else {code
+    executed if condition is false}\n\"Condition\": Put after while.\n\u201C{ }\u201D:
+    Used as a pair.\n\u201CReset\u201D:  Reset all commands.\n\u201CGo\u201D : Move
+    the car.\n\u201CBack\u201D:back to last page.\n*Each command can only move the
+    car by 1-step.\n*You have to go to end point in order to win.\n*You should always
+    include the else clause in order to win."
 --- !u!222 &2127407158
 CanvasRenderer:
   m_ObjectHideFlags: 0

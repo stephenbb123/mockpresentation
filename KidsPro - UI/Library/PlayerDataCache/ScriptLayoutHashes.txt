@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-D:/FYP/mockpresentation/kids -experiment.apk
+D:/FYP/mockpresentation/KidsPro - final.apk
 SceneListBegin?
 Assets/Scenes/MainMenu.unity
 Assets/Scenes/Level1.unity

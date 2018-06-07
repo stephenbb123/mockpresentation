@@ -1439,7 +1439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 673, y: -1319.3884}
+  m_AnchoredPosition: {x: 673, y: -1252}
   m_SizeDelta: {x: 339.4, y: 143.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &250878012
@@ -1664,8 +1664,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 650.1001, y: 17.400024}
-  m_SizeDelta: {x: 185.3, y: 1717.4}
+  m_AnchoredPosition: {x: 642.5, y: 17.400024}
+  m_SizeDelta: {x: 238, y: 1717.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &373824231
 MonoBehaviour:
@@ -1679,7 +1679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6627451, b: 0.6745098, a: 1}
+  m_Color: {r: 0.9686275, g: 0.7607844, b: 0.53333336, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6294,8 +6294,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0025635064, y: -0.010193}
-  m_SizeDelta: {x: 2132.8, y: 2797.4}
+  m_AnchoredPosition: {x: 18.8, y: -0.010193}
+  m_SizeDelta: {x: 2184.8, y: 2797.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1355337242
 MonoBehaviour:
@@ -6329,9 +6329,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Instructions\n\u201CUp\u201D: Go forward\n\u201CDown\u201D: Go backward\n\u201CLeft\u201D:
-    Go left\n\u201CRight\u201D: Go right\n\u201CCycle\u201D: the car move a cycle
-    around XXX.\n\u201CWhile\u201D: WHILE (condition) {loop statement}.\n\"Condition\":
+  m_Text: "Instructions\n\n\u201CCycle\u201D: the car move a cycle around the center
+    along the road.\n\u201CWhile\u201D: WHILE (condition) {loop statement}.\n\"Condition\":
     Put after while.\n\u201C{ }\u201D: Used as a pair.\n\u201CReset\u201D:  Reset
     all commands.\n\u201CGo\u201D : Move the car.\n\u201CBack\u201D:back to last page.\n*Each
     command can only move the car by 1-step.\n*You have to go to end point in order

@@ -310,11 +310,16 @@ public class Coding : MonoBehaviour
             randText = FindObjectOfType<SetText>();
             randText.SetString("Objective:Odd Number-> Go up. Even number -> Go right.\nNumber: " + Random.Range(1, 10));
         }
-        else if(currentScene.name == "Level2"){
+        else if (currentScene.name == "Level2")
+        {
             randText = FindObjectOfType<SetText>();
             randText.SetString("Objective: Collect 3 flags.");
         }
-        else randText.SetString("");
+        else
+        {
+            randText = FindObjectOfType<SetText>();
+            randText.SetString("");
+        }
     }
 
     public void Text_Changed(string changeText)

@@ -32,6 +32,7 @@ public class Level3 : MonoBehaviour
         car = FindObjectOfType<CarController>();
         code = FindObjectOfType<Coding>();
         car.enabled = false;
+        userInput.Add("up");
        
 
     }
@@ -79,6 +80,7 @@ public class Level3 : MonoBehaviour
         int start = 0;
         int end = 0;
         num = randText.GetNum();
+        Debug.Log(num);
 
         for (int i = 0; i < commands.Count; i++) //loop all input.
         {
@@ -91,23 +93,16 @@ public class Level3 : MonoBehaviour
                     {
                         start = commands.IndexOf("{");
                         end = commands.IndexOf("}");
-                        number = end+1;
-                        for (int n = 0; n < end; n++)
+                        number = end + 1;
+                        for (int y = end + 1; y < commands.Count; y++)
                         {
-                           userInput.Add(commands[n]);
-                           
-                        }
-                       /* for (int y = end+1; y < commands.Count; y++)
-                        {   
                             //commands.Insert(number + 1, commands[y]);
                             commands.RemoveAt(number);
-                        }*/
-                        
+                        }
                     }
                     else
                     {
                         randText.SetString("You got a wrong way.1");
-
                     }
                 }
                 else if (commands[ifIndex + 1].Equals("even"))
@@ -117,15 +112,11 @@ public class Level3 : MonoBehaviour
                         start = commands.IndexOf("else");
                         end = commands.LastIndexOf("}");
                         number = end;
-                        for (int n = start+1; n < end; n++)
-                        {
-                         userInput.Add(commands[n]);
-                        }
-                        /*for (int y = ifIndex; y < start; y++)
+                        for (int y = ifIndex; y < start - 1; y++)
                         {
                             //commands.Insert(number + 1, commands[y]);
                             commands.RemoveAt(ifIndex);
-                        }*/
+                        }
                     }
                     else
                     {
@@ -148,20 +139,15 @@ public class Level3 : MonoBehaviour
                         start = commands.IndexOf("{");
                         end = commands.IndexOf("else");
                         number = end;
-                        for(int n = 0; n < end; n++)
-                        {
-                            userInput.Add(commands[n]);
-                        }
-                        break;
-                        /*for (int y = end; y < commands.Count; y++)
+                        for (int y = end; y < commands.Count; y++)
                         {
                             //commands.Insert(number + 1, commands[y]);
                             commands.RemoveAt(number);
-                        }*/
+                        }
                     }
                     else
                     {
-                        randText.SetString("You got a wrong way.4");
+                        //randText.SetString("You got a wrong way.4");
                     }
                 }
                 else if (commands[ifIndex + 1].Equals("odd"))
@@ -169,22 +155,17 @@ public class Level3 : MonoBehaviour
                     if (commands[ifIndex + 3].Equals("up"))
                     {
                         start = commands.IndexOf("else");
-                        end = commands.LastIndexOf("}");
+                        end = commands.IndexOf("}", 2);
                         number = end;
-                        for(int n = 0; n < start; n++)
-                        {
-                            userInput.Add(commands[n]);
-                        }
-                        break;
-                        /*for (int y = ifIndex; y < start; y++)
+                        for (int y = ifIndex; y < start - 1; y++)
                         {
                             //commands.Insert(number + 1, commands[y]);
                             commands.RemoveAt(ifIndex);
-                        }*/
+                        }
                     }
                     else
                     {
-                        randText.SetString("You got a wrong way.5");
+                        //randText.SetString("You got a wrong way.5");
                     }
                 }
                 else
@@ -193,14 +174,9 @@ public class Level3 : MonoBehaviour
                 }
             }
         }
-
-
-
-
-        for(int i = 0; i < userInput.Count; i++)
+        for (int i = 0; i < commands.Count; i++)
         {
-            Debug.Log("userInput command: "+userInput[i]);
-            switch (userInput[i])    //if there is no while in the user input
+            switch (commands[i])    //if there is no while in the user input
             {
                 case "up":
                     row++;
@@ -244,7 +220,16 @@ public class Level3 : MonoBehaviour
                         car.SetWayPoints(map[row, col]);
                     }
                     break;
-
+                case "if":
+                    break;
+                case "{":
+                    break;
+                case "}":
+                    break;
+                case "odd":
+                    break;
+                case "even":
+                    break;
                 case "default":
                     break;
             }

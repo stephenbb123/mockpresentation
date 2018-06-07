@@ -14,7 +14,7 @@ public class SetText : MonoBehaviour {
 
         switch(currentScene.name){
             case "Level1":
-                randText.text = "Go to the position of the white flag .";
+                randText.text = "Go to the position of the white flag";
                 break;
             case "Level2":
                 randText.text = "Objective: Collect 3 Flags and go to the end point";

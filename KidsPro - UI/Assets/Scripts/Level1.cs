@@ -47,6 +47,12 @@ public class Level1 : MonoBehaviour
             randText.SetString("Crashed. Please try again.");
             car.Clear();
         }
+        if (Vector3.Distance(car.transform.localPosition, map[4,0]) < 0.1f)
+        {
+            randText = FindObjectOfType<SetText>();
+            randText.SetString("congratulation! You Win.");
+
+        }
     }
 
     
